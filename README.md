@@ -6,6 +6,7 @@ This senior project's goal is to use an electroencephalogram (EEG) headset and m
 ### Acronyms
 * EEG - Electroencephalogram
 * TF - TensorFlow
+* SVM - Support Vector Machine
 
 ### Extensions
 * .py - Python

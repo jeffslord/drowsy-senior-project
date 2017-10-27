@@ -15,4 +15,10 @@ The SVM takes data that is stored in the CSV format, organized as follows:
 #### (The following are screenshots from a 2-D test for x > y and y > x)
 
 ### Linear Separator
-![](/classification/data/images/graph1.PNG?raw=true width="48" "Linear Separator")
+![](/classification/data/images/graph1.PNG?raw=true "Linear Separator")
+
+### Train and Test Accuracies
+![](/classification/data/images/graph2.PNG?raw=true "Linear Separator")
+
+### Loss
+![](/classification/data/images/graph3.PNG?raw=true "Linear Separator")

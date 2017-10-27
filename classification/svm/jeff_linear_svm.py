@@ -24,7 +24,7 @@ sess = tf.Session()
 # Load the data
 # Data should be in the form : First row = header (will be excluded),
 # leftmost column is label (0 or 1), rest is features
-data_dir = r"D:\Development\Senior Project\Sample Data\ds1.10.csv"
+data_dir = r"D:\Development\Senior Project\Sample Data\sample1.csv"
 labels, features = extract_data(data_dir)
 labels = np.array([1 if x == 1 else -1 for x in labels]) # Get array of 1 or -1, instead of 0 and 1.
 # Train size = number of entries(trials), num_features = number of features(number of frequencies,
@@ -112,32 +112,68 @@ for i in range(num_steps):
     print("Loss = " + str(temp_loss))
     print("Train Accuracy = " + str(train_accuracy[i]))
     print("Test Accuracy = " + str(test_accuracy[i]))
+print()
 
-
+# Save the model (Will need to read up on how to save/export and import models into the appropriate formats)
 saver = tf.train.Saver()
 saver.save(sess, r"D:\Development\Senior Project\models\my_model", i+1)
+
+
+# Test the prediction function
+_data = [[7.2534, 6.539]]
+feed_dict = {x: _data}
+print(_data)
+predictions = sess.run(prediction, feed_dict={x: _data})
+print("Prediction: ")
+print(predictions)
+
+
+
 # Extract coefficients, can visualize for 2 dimensions(2 features) but for more you can't plot a line
-# [[a1], [a2]] = sess.run(W)
-# [[b]] = sess.run(b)
-# slope = -a2/a1
-# y_intercept = b/a1
-# # Extract x1 and x2 vals
-# feature_vals = [d[1] for d in features]
-# #Get best fit line
-# best_fit = []
-# for i in feature_vals:
-#   best_fit.append(slope*i+y_intercept)
+[[a1], [a2]] = sess.run(W)
+[[b]] = sess.run(b)
+slope = -a2/a1
+y_intercept = b/a1
+
+# Extract x1 and x2 vals
+feature_vals1 = [d[1] for d in features]
+
+#Get best fit line
+best_fit = []
+for i in feature_vals1:
+  best_fit.append(slope*i+y_intercept)
+
+true_x = [d[1] for i, d in enumerate(features) if labels[i] == 1]
+true_y = [d[0] for i, d in enumerate(features) if labels[i] == 1]
+false_x = [d[1] for i, d in enumerate(features) if labels[i] == -1]
+false_y = [d[0] for i, d in enumerate(features) if labels[i] == -1]
 
 
-# print("Labels")
-# print(labels)
-# print("Features")
-# print(features)
-# print("Train Indices")
-# print(train_indices)
-# print("Test Indices")
-# print(test_indices)
-# print("Training Features")
-# print(training_features)
-# print("Testing Features")
-# print(testing_features)
+# matplotlib inline
+# Plot data and line
+plt.plot(true_x, true_y, 'o', label='X > Y')
+plt.plot(false_x, false_y, 'x', label=' Y > X')
+plt.plot(feature_vals1, best_fit, 'r-', label='Linear Separator', linewidth=3)
+#plt.ylim([0, 10])
+plt.legend(loc='lower right')
+plt.title('X vs Y')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
+
+# Plot train/test accuracies
+plt.plot(train_accuracy, 'k-', label='Training Accuracy')
+plt.plot(test_accuracy, 'r--', label='Test Accuracy')
+plt.title('Train and Test Set Accuracies')
+plt.xlabel('Generation')
+plt.ylabel('Accuracy')
+plt.legend(loc='lower right')
+plt.show()
+
+# Plot loss over time
+plt.plot(loss_vec, 'k-')
+plt.title('Loss per Generation')
+plt.xlabel('Generation')
+plt.ylabel('Loss')
+plt.show()
+plt.show()

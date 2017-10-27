@@ -5,8 +5,8 @@ The SVM takes data that is stored in the CSV format, organized as follows:
 
 | Classifier (True/False) | Feature 1 | Feature 2 | ... | Feature N |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 0  | float  | float  | float  | float  |
-| 1  | float  | float  | float  | float  |
-| 1  | float  | float  | float  | float  |
-| 0  | float  | float  | float  | float  |
+| 0  | float  | float  | ...  | float  |
+| 1  | float  | float  | ...  | float  |
+| 1  | float  | float  | ...  | float  |
+| 0  | float  | float  | ...  | float  |
 | ...  | ...  | ...  | ...  | ...  |

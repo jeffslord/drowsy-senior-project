@@ -1,5 +1,5 @@
-The SVM had to be built from scratch to understand the steps. The already existing SVM's serve as a good reference, but it was not as simple as we had hoped to modify them to fit our needs. So our own was built
-The current version being used is jeff_linear_svm
+The SVM had to be built from scratch to understand the steps. The already existing SVM's serve as a good reference, but it was not as simple as we had hoped to modify them to fit our needs. So our own was built.\n
+The current version being used is **jeff_linear_svm**
 
 The SVM takes data that is stored in the CSV format, organized as follows:
 

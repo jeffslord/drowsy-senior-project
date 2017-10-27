@@ -10,3 +10,8 @@ The SVM takes data that is stored in the CSV format, organized as follows:
 | 1  | float  | float  | ...  | float  |
 | 0  | float  | float  | ...  | float  |
 | ...  | ...  | ...  | ...  | ...  |
+
+In a 2-Dimensional space, the SVM produces the following:
+(The following are screenshots from a 2-D test for x > y and y > x)
+
+![Text](../../data/images/graph1.PNG "optional Title")

@@ -1,5 +1,5 @@
 import tensorflow as tf
-import numpy as np  # Probably need to install the numpy-mkl for it to work with scipy
+import numpy as np  # Probably need to install the numpy-mkl for it to work with scipy (don't need scipy for this version)
 from matplotlib import pyplot as plt
 from tensorflow.python.framework import ops
 import os

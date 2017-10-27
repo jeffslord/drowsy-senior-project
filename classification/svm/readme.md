@@ -13,7 +13,7 @@ The SVM takes data that is stored in the CSV format, organized as follows:
 | ...  | ...  | ...  | ...  | ...  |
 
 ## In a 2-Dimensional space, the SVM produces the following:
-#### (The following are screenshots from a 2-D test for x > y and y > x)
+(The following are screenshots from a 2-D test for x > y and y > x)
 
 ### Linear Separator
 ![](/classification/data/images/graph1.PNG?raw=true "Linear Separator")

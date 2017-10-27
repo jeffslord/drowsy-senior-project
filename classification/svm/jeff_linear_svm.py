@@ -54,6 +54,10 @@ y = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 W = tf.Variable(tf.random_normal(shape=[num_features, 1]), name="W")
 b = tf.Variable(tf.random_normal(shape=[1, 1]))
 
+# This is where the math starts
+# I am not clear on everything that is done here
+# but this is the usual procedure for a linear SVM
+
 # Model operations
 model_output = tf.subtract(tf.matmul(x, W), b)
 

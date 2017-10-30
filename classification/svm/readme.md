@@ -12,12 +12,12 @@ The SVM takes data that is stored in the CSV format, organized as follows:
 | 0  | float  | float  | ...  | float  |
 | ...  | ...  | ...  | ...  | ...  |
 
-# Non-linear SVM (scikit-learn)
+# Non-Linear SVM (scikit-learn)
 ## 2-D Example for visualization
 ### Support vector classifier using RBF kernel
 ![](/classification/data/images/graph-nl1.PNG?raw=true "Non-linear Separator")
 
-# Linear SVM
+# Linear SVM (TensorFlow)
 ### Linear Separator
 ![](/classification/data/images/graph1.PNG?raw=true "Linear Separator")
 ### Train and Test Accuracies

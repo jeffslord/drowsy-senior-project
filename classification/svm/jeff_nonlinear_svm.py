@@ -31,10 +31,9 @@ y_test = y[test_indices]
 # print(x_test.shape)
 # print(x_test)
 # print(y_test)
-
-iris = datasets.load_iris()
-ix = iris.data[:, :2]
-iy = iris.target
+# iris = datasets.load_iris()
+# ix = iris.data[:, :2]
+# iy = iris.target
 
 #adjust these parameters to see what is best
 # c : how much to avoid misclassifying.

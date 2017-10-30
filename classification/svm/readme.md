@@ -1,9 +1,9 @@
 # SVM
 ### Current
-The anticipated SVM for our classification will be non-linear. The current code being used for this is **jeff_nonlinear_svm** and is made based from scikit.
+The anticipated SVM for our classification will be non-linear. The current code being used for this is **jeff_nonlinear_svm.py** and is made based from scikit.
 
 ### Other
-The previously created SVM was linear, but will most likely not be suitable for our classification because the data may not be linearly separable. The version for this is **jeff_linear_svm**.
+The previously created SVM was linear, but will most likely not be suitable for our classification because the data may not be linearly separable. The version for this is **jeff_linear_svm.py**.
 
 ## The SVM takes data that is stored in CSV format, organized as follows:
 | Classifier (True/False) | Feature 1 | Feature 2 | ... | Feature N |

@@ -3,17 +3,12 @@ from sklearn import svm, datasets
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
-data_dir = r"D:\Development\Senior Project\Sample Data\circle1.csv"
+data_dir = r"D:\Development\Senior Project\Sample Data\sample2.csv"
 graphing = True
-
 
 def extract_data(data_dir):
   _data = np.genfromtxt(data_dir, delimiter=',', skip_header=1, dtype=float)
-  #_labels = _data[:, 0]
-  #_features = _data[:, 1:]
   return _data
-  # Returns a matrix of labels, and a matrix of features
-  return _features, _labels
 
 def train_test_split(data, percent=0.8):
   num_tuples = len(data)
@@ -40,9 +35,6 @@ y_test = y[test_indices]
 iris = datasets.load_iris()
 ix = iris.data[:, :2]
 iy = iris.target
-#print(y)
-#print(iy)
-#num_tuples, num_dim = x.shape
 
 #adjust these parameters to see what is best
 # c : how much to avoid misclassifying.
@@ -72,7 +64,6 @@ print(accuracy_score(y_test, prediction))
 # END PREDICT
 
 # GRAPHING
-
 if(graphing):
   x1_min, x1_max = x[:, 0].min() - 1, x[:, 0].max() + 1
   x2_min, x2_max = x[:, 1].min() - 1, x[:, 1].max() + 1
@@ -90,6 +81,5 @@ if(graphing):
   plt.ylabel('Feat2')
   #plt.xlim(xx1.min(), xx1.max())
   plt.title('SVC with RBF kernel')
-
   plt.show()
 # GRAPHING END

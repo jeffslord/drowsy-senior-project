@@ -1,10 +1,18 @@
 import random
+import math
 
-for i in range(1000):
-    x = random.uniform(-1000.0, 1000.0)
-    y = random.uniform(-1000, 1000)
+for i in range(10000):
+    x = random.uniform(-100.0, 100.0)
+    y = random.uniform(-100, 100)
 
-    if(x > y):
-        print("0," + str(x) + "," + str(y))
-    elif(y > x):
+    # if(x > y):
+    #     print("0," + str(x) + "," + str(y))
+    # elif(y > x):
+    #     print("1," + str(x) + "," + str(y))
+
+
+    if(math.sqrt(x*x + y*y) < 100):
         print("1," + str(x) + "," + str(y))
+    else:
+        print("0," + str(x) + "," + str(y))
+

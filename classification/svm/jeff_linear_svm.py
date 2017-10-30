@@ -151,6 +151,7 @@ false_y = [d[0] for i, d in enumerate(features) if labels[i] == -1]
 
 # matplotlib inline
 # Plot data and line
+p1 = plt.figure(1)
 plt.plot(true_x, true_y, 'o', label='X > Y')
 plt.plot(false_x, false_y, 'x', label=' Y > X')
 plt.plot(feature_vals1, best_fit, 'r-', label='Linear Separator', linewidth=3)
@@ -159,21 +160,27 @@ plt.legend(loc='lower right')
 plt.title('X vs Y')
 plt.xlabel('X')
 plt.ylabel('Y')
-plt.show()
+#plt.show()
 
 # Plot train/test accuracies
+p2 = plt.figure(2)
 plt.plot(train_accuracy, 'k-', label='Training Accuracy')
 plt.plot(test_accuracy, 'r--', label='Test Accuracy')
 plt.title('Train and Test Set Accuracies')
 plt.xlabel('Generation')
 plt.ylabel('Accuracy')
 plt.legend(loc='lower right')
-plt.show()
+#plt.show()
 
 # Plot loss over time
+p3 = plt.figure(3)
 plt.plot(loss_vec, 'k-')
 plt.title('Loss per Generation')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
-plt.show()
+#plt.show()
+
+p1.show()
+p2.show()
+p3.show()
 plt.show()

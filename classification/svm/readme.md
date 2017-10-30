@@ -14,10 +14,6 @@ The previously created SVM was linear, but will most likely not be suitable for 
 | 0  | float  | float  | ...  | float  |
 | ...  | ...  | ...  | ...  | ...  |
 
-
-
-
-
 # Non-Linear SVM (scikit-learn)
 ## 2-D Example for visualization
 ### Support vector classifier using RBF kernel

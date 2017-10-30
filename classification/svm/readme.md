@@ -16,6 +16,8 @@ The previously created SVM was linear, but will most likely not be suitable for 
 
 
 
+
+
 # Non-Linear SVM (scikit-learn)
 ## 2-D Example for visualization
 ### Support vector classifier using RBF kernel

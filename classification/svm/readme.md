@@ -1,9 +1,11 @@
-The SVM had to be built from scratch to understand the steps. The already existing SVM's serve as a good reference, but it was not as simple as we had hoped to modify them to fit our needs. So our own was built.
+# SVM
+### Current
+The anticipated SVM for our classification will be non-linear. The current code being used for this is **jeff_nonlinear_svm** and is made based from scikit.
 
-The current version being used is **jeff_linear_svm**
+### Other
+The previously created SVM was linear, but will most likely not be suitable for our classification because the data may not be linearly separable. The version for this is **jeff_linear_svm**.
 
-The SVM takes data that is stored in the CSV format, organized as follows:
-
+## The SVM takes data that is stored in the CSV format, organized as follows:
 | Classifier (True/False) | Feature 1 | Feature 2 | ... | Feature N |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 0  | float  | float  | ...  | float  |

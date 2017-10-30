@@ -18,11 +18,11 @@ The previously created SVM was linear, but will most likely not be suitable for 
 ## 2-D Example for visualization
 ### Support vector classifier using RBF kernel
 ![](/classification/data/images/graph-nl1.PNG?raw=true "Non-linear Separator")
-
+### Support Vector classifier using RBF kernel - Multiple Labels/Classes
 # Linear SVM ([TensorFlow](https://www.tensorflow.org/))
 ### Linear Separator
 ![](/classification/data/images/graph1.PNG?raw=true "Linear Separator")
-### Train and Test Accuracies
+### Train and test accuracies
 ![](/classification/data/images/graph2.PNG?raw=true "Linear Separator")
 ### Loss
 ![](/classification/data/images/graph3.PNG?raw=true "Linear Separator")

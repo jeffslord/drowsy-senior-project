@@ -14,12 +14,12 @@ The previously created SVM was linear, but will most likely not be suitable for 
 | 0  | float  | float  | ...  | float  |
 | ...  | ...  | ...  | ...  | ...  |
 
-# Non-Linear SVM (scikit-learn)
+# Non-Linear SVM ([scikit-learn](http://scikit-learn.org/stable/index.html))
 ## 2-D Example for visualization
 ### Support vector classifier using RBF kernel
 ![](/classification/data/images/graph-nl1.PNG?raw=true "Non-linear Separator")
 
-# Linear SVM (TensorFlow)
+# Linear SVM ([TensorFlow](https://www.tensorflow.org/))
 ### Linear Separator
 ![](/classification/data/images/graph1.PNG?raw=true "Linear Separator")
 ### Train and Test Accuracies

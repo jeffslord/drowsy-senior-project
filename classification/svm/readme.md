@@ -12,8 +12,12 @@ The SVM takes data that is stored in the CSV format, organized as follows:
 | 0  | float  | float  | ...  | float  |
 | ...  | ...  | ...  | ...  | ...  |
 
-## In a 2-Dimensional space, the SVM produces the following:
-(The following are screenshots from a 2-D test for x > y and y > x)
+# Non-linear SVM
+## 2-D Example for visualization
+### Support vector classifier using RBF kernel
+
+
+# Linear SVM
 
 ### Linear Separator
 ![](/classification/data/images/graph1.PNG?raw=true "Linear Separator")

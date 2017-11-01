@@ -6,6 +6,8 @@ import os
 ops.reset_default_graph()  # Double check this
 
 
+data_dir = "../data/sample2.csv"
+
 # Extract Function from file
 # data_dir includes complete directory including extension
 def extract_data(data_dir):
@@ -24,7 +26,6 @@ sess = tf.Session()
 # Load the data
 # Data should be in the form : First row = header (will be excluded),
 # leftmost column is label (0 or 1), rest is features
-data_dir = r"D:\Development\Senior Project\Sample Data\sample1.csv"
 labels, features = extract_data(data_dir)
 labels = np.array([1 if x == 1 else -1 for x in labels]) # Get array of 1 or -1, instead of 0 and 1.
 # Train size = number of entries(trials), num_features = number of features(number of frequencies,

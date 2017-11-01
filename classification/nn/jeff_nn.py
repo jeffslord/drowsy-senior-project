@@ -8,15 +8,8 @@ import urllib
 import numpy as np
 import tensorflow as tf
 
-
-#data_dir = "/Users/Jeff/PycharmProjects/drowsy-senior-project/classification/data/sample1.csv"
-data_dir = "/Users/Jeff/PycharmProjects/drowsy-senior-project/classification/data/sample3.csv"
-# # Data sets
-# IRIS_TRAINING = "iris_training.csv"
-# IRIS_TRAINING_URL = "http://download.tensorflow.org/data/iris_training.csv"
-#
-# IRIS_TEST = "iris_test.csv"
-# IRIS_TEST_URL = "http://download.tensorflow.org/data/iris_test.csv"
+data_dir = "../data/sample2.csv"
+num_classes = 2
 
 def extract_data(data_dir):
   _data = np.genfromtxt(data_dir, delimiter=',', skip_header=1, dtype=float)
@@ -32,27 +25,6 @@ def train_test_split(data, percent=0.8):
   return train_indices, test_indices
 
 def main():
-  # # If the training and test sets aren't stored locally, download them.
-  # if not os.path.exists(IRIS_TRAINING):
-  #   raw = urllib.urlopen(IRIS_TRAINING_URL).read()
-  #   with open(IRIS_TRAINING, "w") as f:
-  #     f.write(raw)
-  #
-  # if not os.path.exists(IRIS_TEST):
-  #   raw = urllib.urlopen(IRIS_TEST_URL).read()
-  #   with open(IRIS_TEST, "w") as f:
-  #     f.write(raw)
-  #
-  # # Load datasets.
-  # training_set = tf.contrib.learn.datasets.base.load_csv_with_header(
-  #     filename=IRIS_TRAINING,
-  #     target_dtype=np.int,
-  #     features_dtype=np.float32)
-  # test_set = tf.contrib.learn.datasets.base.load_csv_with_header(
-  #     filename=IRIS_TEST,
-  #     target_dtype=np.int,
-  #     features_dtype=np.float32)
-
   # Split data into training and testing,
   data = extract_data(data_dir)
   x = data[:, 1:]
@@ -76,10 +48,17 @@ def main():
   #                                         hidden_units=[10, 20, 10],
   #                                         n_classes=3,
   #                                         model_dir="/tmp/my_model")
+
+  # Optimizers = Adagrad, Ftrl,
+  # Activation tf.nn.relu/tanh/sigmoid
   classifier = tf.estimator.DNNClassifier(feature_columns=feature_columns,
                                           hidden_units=[10, 20, 10],
-                                          n_classes=3
-                                          #optimizer='Ftrl'
+                                          n_classes=num_classes,
+                                          optimizer=tf.train.AdagradOptimizer(
+                                              learning_rate=0.1
+                                          ),
+                                          activation_fn=tf.nn.relu
+                                          #optimizer='Adagrad'
                                           #model_dir="/tmp/my_model1")
                                           )
 

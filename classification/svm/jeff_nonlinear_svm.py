@@ -2,6 +2,7 @@ import numpy as np
 from sklearn import svm, datasets
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
+from sklearn.externals import joblib
 
 data_dir = "../data/sample2.csv"
 
@@ -58,9 +59,17 @@ svc = svm.SVC(kernel='rbf',
 svc = svc.fit(x_train, y_train)
 # END SVM
 
+# EXPORT
+joblib.dump(svc, './models/nonlinear_svc_01.pkl')
+# END EXPORT
+
 # PREDICT
 prediction = svc.predict(x_test)
 print("\nNonlinear SVM: {0:f}\n".format(accuracy_score(y_test, prediction)))
+# load model in 'server' or app with...
+# from sklearn.externals import joblib
+# model = joblib.load('path_to_model.pkl')
+# model.predict()
 # END PREDICT
 
 # GRAPHING

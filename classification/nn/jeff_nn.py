@@ -24,6 +24,10 @@ def train_test_split(data, percent=0.8):
   test_indices = np.array(list(set(range(num_tuples)) - set(train_indices)))
   return train_indices, test_indices
 
+#Need to work on exporting the models
+def serving_input_receiver_fn():
+    serialized_tf_example = tf.placeholder()
+
 def main():
   # Split data into training and testing,
   data = extract_data(data_dir)
@@ -57,9 +61,9 @@ def main():
                                           optimizer=tf.train.AdagradOptimizer(
                                               learning_rate=0.1
                                           ),
-                                          activation_fn=tf.nn.relu
+                                          activation_fn=tf.nn.relu,
                                           #optimizer='Adagrad'
-                                          #model_dir="/tmp/my_model1")
+                                          model_dir="./models/dnn_01"
                                           )
 
   # Define the training inputs
@@ -99,6 +103,13 @@ def main():
   print(
       "New Samples, Class Predictions:    {}\n"
       .format(predicted_classes))
+
+
+  # tf.estimator.DNNClassifier.export_savedmodel(
+  #     classifier,
+  #     "./models/export/dnn_01",
+  # )
+
 
 if __name__ == "__main__":
     main()

@@ -4,5 +4,5 @@ The current implementation for our neural network test is a deep neural network 
 
 ### Parameters
 The adjustable parameters for the DNN include:
--Optimizer
--Activation function.
+- Optimizer
+- Activation function.

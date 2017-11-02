@@ -11,3 +11,5 @@ The adjustable parameters for the DNN include:
 It is possible to visualize the neural network using tensorboard. If you have the exported log files (maybe other files too? need to clarify) you can launch tensorboard.
 
 tensorboard --logdir='path_to_log_files'
+
+View the tensorboard by going to localhost:6006 (or whatever port you specify, default is 6006)

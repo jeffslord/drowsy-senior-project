@@ -8,6 +8,8 @@ This senior project's goal is to use an electroencephalogram (EEG) headset and m
 * SK - scikit
 * TF - TensorFlow
 * SVM - Support Vector Machine
+* NN - Neural Network
+* DNN - Deep Neural Network
 
 ### Extensions
 * .py - Python

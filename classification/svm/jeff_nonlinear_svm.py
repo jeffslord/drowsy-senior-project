@@ -7,7 +7,7 @@ from sklearn.externals import joblib
 data_dir = "../data/sample2.csv"
 
 graphing = False
-
+# hey boi this is a change
 def extract_data(data_dir):
   _data = np.genfromtxt(data_dir, delimiter=',', skip_header=1, dtype=float)
   return _data

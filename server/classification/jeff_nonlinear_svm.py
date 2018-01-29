@@ -3,8 +3,9 @@ from sklearn import svm, datasets
 from sklearn.metrics import accuracy_score
 #import matplotlib.pyplot as plt
 from sklearn.externals import joblib
+import urllib
 
-data_dir = "../data/sample2.csv"
+#data_dir = "../data/sample2.csv"
 
 graphing = False
 # hey boi this is a change
@@ -25,13 +26,17 @@ def train_test_split(data, percent=0.8):
     return train_indices, test_indices
 
 
-def process(data):
-
+def process(data_url):
+    #o = urllib.parse.ParseResult(data_url)
+    # print(o)
     # For 2-D
-    #data = extract_data(data_dir)
+    print("Extracting data...")
+    data = extract_data(data_url)
+    print("Splitting data...")
     x = data[:, 1:]
-    print(x)
+    # print(x)
     y = data[:, 0]
+    # print(y)
     train_indices, test_indices = train_test_split(x)
     x_train = x[train_indices]
     y_train = y[train_indices]
@@ -57,14 +62,17 @@ def process(data):
                   probability=False,
                   shrinking=True,
                   verbose=False)
+    print("Fitting...")
     svc = svc.fit(x_train, y_train)
     # END SVM
 
     # EXPORT
-    joblib.dump(svc, './models/nonlinear_svc_01.pkl')
+    print("Exporting...")
+    joblib.dump(svc, './data/models/nonlinear_svc_01.pkl')
     # END EXPORT
 
     # PREDICT
+    print("Prediction test...")
     prediction = svc.predict(x_test)
     print("\nNonlinear SVM: {0:f}\n".format(
         accuracy_score(y_test, prediction)))

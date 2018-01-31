@@ -59,7 +59,7 @@ def train_test():
         'file': ('upload', open(data_url, 'rb'), 'text/csv')
     }
     payload = {
-        'id': 0,
+        'id': 1,
         'sample': 0
     }
     r = requests.post(url, data=payload, files=files)

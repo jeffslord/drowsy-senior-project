@@ -3,7 +3,7 @@ from flask import request
 from classification import jeff_nonlinear_svm as svm
 import numpy as np
 import json
-import csv
+#import csv
 from werkzeug.datastructures import FileStorage
 import urllib
 import datetime
@@ -59,7 +59,7 @@ def train():
         while(searching):
             found = False
             for file in os.listdir(datadir):
-                if('trial='+str(trial) in file):
+                if('id='+str(id)+'_trial='+str(trial) in file):
                     found = True
                     break
             if(found):

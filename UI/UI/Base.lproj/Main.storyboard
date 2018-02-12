@@ -57,6 +57,7 @@
                                 <color key="backgroundColor" red="0.91992526814109921" green="0.91992526814109921" blue="0.91992526814109921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-G7-1pb">
@@ -66,9 +67,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adS-k3-IG4">
-                                <rect key="frame" x="109" y="214" width="99" height="30"/>
+                                <rect key="frame" x="60" y="214" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create New ID"/>
+                                <state key="normal" title="Receive/Create ID"/>
                                 <connections>
                                     <segue destination="wmu-X5-c9h" kind="show" id="VQt-Hf-FyC"/>
                                 </connections>
@@ -128,10 +129,10 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
             </objects>
             <point key="canvasLocation" x="2064" y="129"/>
         </scene>
-        <!--Create New ID-->
+        <!--Receive/Create ID-->
         <scene sceneID="bqU-ft-aJZ">
             <objects>
-                <viewController storyboardIdentifier="CreateNewID" title="Create New ID" id="wmu-X5-c9h" customClass="CreateNewIDViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateNewID" title="Receive/Create ID" id="wmu-X5-c9h" customClass="CreateNewIDViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6lq-TT-htA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,18 +151,15 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-rl-K3a">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Last" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-rl-K3a">
                                 <rect key="frame" x="61" y="121" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUE-bU-Ei5">
-                                <rect key="frame" x="111" y="159" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create New ID"/>
-                            </button>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ID" translatesAutoresizingMaskIntoConstraints="NO" id="NE1-ya-Fbk">
                                 <rect key="frame" x="0.0" y="309" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -175,6 +173,11 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                             </tableViewCell>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUE-bU-Ei5">
+                                <rect key="frame" x="86" y="159" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Receive/Create ID"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3zK-Nq-bSZ"/>
@@ -182,7 +185,7 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xQ-Nu-yvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="129"/>
+            <point key="canvasLocation" x="1140" y="128.87323943661971"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="5cr-vT-Dh0">

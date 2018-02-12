@@ -1,0 +1,6 @@
+2/12/18 2:00pm
+
+Added main page with enter ID text box, create new ID button, train, test, and run button
+Created pages for create new ID and profile training (they don't do anything yet though)
+Added file for swift to start sending and receiving JSON (not sure if this is necessary yet though)
+

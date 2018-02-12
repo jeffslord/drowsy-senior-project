@@ -1,6 +1,15 @@
 2/12/18 2:00pm
 
-Added main page with enter ID text box, create new ID button, train, test, and run button
-Created pages for create new ID and profile training (they don't do anything yet though)
-Added file for swift to start sending and receiving JSON (not sure if this is necessary yet though)
+- Added main page with enter ID text box, create new ID button, train, test, and run button
+- Created pages for create new ID and profile training (they don't do anything yet though, although the profile training page is now capable of taking the ID from the main page)
+- Added file for swift to start sending and receiving JSON (not sure if this is necessary yet though)
+
+To do list for now: 
+- Create the basic layout of the rest of the pages and connect them to the main page
+- Get the app to send a name to the server and have the server send something back (either new or existing ID) to enter into the gray table cell
+- Get the headset sending data to the app and get the app to send that data to the server
+- Get app to play training alerts (close/open eyes) while collecting AND sending data for specified time limit (for profile training)
+- Have the app display an alert when a certain signal is received back (drowsy alert)
+
+
 

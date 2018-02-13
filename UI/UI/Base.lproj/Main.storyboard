@@ -46,10 +46,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oY-rI-FqX">
                                 <rect key="frame" x="145" y="448" width="30" height="30"/>
                                 <state key="normal" title="Test"/>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgJ-tI-p9q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9F-bg-0Gc">
                                 <rect key="frame" x="145" y="498" width="30" height="30"/>
                                 <state key="normal" title="Run"/>
+                                <connections>
+                                    <action selector="run:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQm-NR-yaz"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHy-Vl-l91">
                                 <rect key="frame" x="98" y="176" width="120" height="30"/>
@@ -124,10 +130,46 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6jY-zg-ivs"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile Training" id="Rex-ka-ZZi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uml-4I-ZIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="129"/>
+            <point key="canvasLocation" x="221" y="907"/>
+        </scene>
+        <!--Testing App-->
+        <scene sceneID="6SY-BG-FmN">
+            <objects>
+                <viewController storyboardIdentifier="Testing" title="Testing App" id="gAb-rI-Php" customClass="TestingViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WfN-d9-Ef7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muq-Gm-71c">
+                                <rect key="frame" x="71" y="330" width="178" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Begin Testing"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbo-sB-0b4">
+                                <rect key="frame" x="30" y="88" width="260" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Drowsiness Testing Instructions:
+1. Ensure you have an ID and have trained a profile.
+2. Properly don Mindwave headset and click "Begin Testing". 
+Note: Data will not be saved! Note: Add border</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oBr-C7-lCC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Test" id="jZT-kv-Yuy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54u-Tg-75t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="1657"/>
         </scene>
         <!--Receive/Create ID-->
         <scene sceneID="bqU-ft-aJZ">
@@ -138,21 +180,14 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6s-Qr-OPY">
-                                <rect key="frame" x="113.94990539881655" y="92" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP9-SJ-WaO">
-                                <rect key="frame" x="148.24855043488924" y="280.99999999999989" width="21.000000000000114" height="21.000000000000028"/>
+                                <rect key="frame" x="121" y="92" width="90" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Last" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-rl-K3a">
-                                <rect key="frame" x="61" y="121" width="210" height="30"/>
+                                <rect key="frame" x="55" y="121" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -178,6 +213,13 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Receive/Create ID"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP9-SJ-WaO">
+                                <rect key="frame" x="150" y="280" width="21.000000000000114" height="21.000000000000028"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3zK-Nq-bSZ"/>
@@ -204,6 +246,94 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUd-HD-H1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-598" y="129"/>
+        </scene>
+        <!--Run App-->
+        <scene sceneID="74z-7S-PGi">
+            <objects>
+                <viewController storyboardIdentifier="Tracking" title="Run App" id="jsK-Le-gdT" customClass="RunViewController" customModule="UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dsq-0n-laD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-In-kEQ">
+                                <rect key="frame" x="71" y="330" width="178" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Begin Tracking"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LP-xM-YLj">
+                                <rect key="frame" x="30" y="88" width="260" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Drowsiness Tracking Instructions:
+1. Ensure you have an ID and have trained a profile.
+2. Properly don Mindwave headset and click "Begin Tracking". Note: Add border</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qzF-5O-ntm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Begin Drowsy Detection" id="Wl1-Bt-Yha"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcs-es-vG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219" y="2438"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DRo-fd-dTs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ECz-fd-StS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tw2-Zt-1je">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="47O-l5-h3X" kind="relationship" relationship="rootViewController" id="ujY-jZ-sB6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ce-gr-OJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-598" y="908"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mgu-xe-Ly1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Luk-lf-EIe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M2G-ml-ExC">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gAb-rI-Php" kind="relationship" relationship="rootViewController" id="4EA-FL-miw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZ8-6Q-sx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-598" y="1658"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QP1-mE-kQd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wXS-pR-QGL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UCL-Vk-EMA">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jsK-Le-gdT" kind="relationship" relationship="rootViewController" id="LiD-Vn-QMZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BwB-n4-BXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-598" y="2438"/>
         </scene>
     </scenes>
 </document>

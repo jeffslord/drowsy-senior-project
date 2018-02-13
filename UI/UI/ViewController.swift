@@ -28,6 +28,27 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func test(_ sender: Any) {
+        if let tvc = storyboard?.instantiateViewController(withIdentifier: "Testing") as? TestingViewController {
+            
+            //sends the data from the text field to the ProfileTrainingViewController
+            tvc.trainid = id.text
+            
+            // 3: now pushes our current ViewController onto the navigation controller
+            navigationController?.pushViewController(tvc, animated: true)
+        }
+    }
+    
+    @IBAction func run(_ sender: Any) {
+        if let rvc = storyboard?.instantiateViewController(withIdentifier: "Tracking") as? RunViewController {
+            
+            //sends the data from the text field to the ProfileTrainingViewController
+            rvc.trainid = id.text
+            
+            // 3: now pushes our current ViewController onto the navigation controller
+            navigationController?.pushViewController(rvc, animated: true)
+        }
+    }
     
     
 }

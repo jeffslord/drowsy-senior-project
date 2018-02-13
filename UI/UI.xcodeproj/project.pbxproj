@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A573A9C0203242AE003913EE /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9BF203242AE003913EE /* TestingViewController.swift */; };
+		A573A9C2203242BF003913EE /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9C1203242BF003913EE /* RunViewController.swift */; };
 		A5F3324720320DF600E23C79 /* ProfileTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */; };
 		A5F33249203216F800E23C79 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F33248203216F800E23C79 /* SwiftyJSON.swift */; };
 		F33F3BAD1FC4C70A00F8456F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F3BAC1FC4C70A00F8456F /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A573A9BF203242AE003913EE /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
+		A573A9C1203242BF003913EE /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTrainingViewController.swift; sourceTree = "<group>"; };
 		A5F33248203216F800E23C79 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F33F3BA91FC4C70A00F8456F /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,8 @@
 				F33F3BAE1FC4C70A00F8456F /* ViewController.swift */,
 				F3B94AC620226E0300AAFB1E /* CreateNewIDViewController.swift */,
 				A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */,
+				A573A9BF203242AE003913EE /* TestingViewController.swift */,
+				A573A9C1203242BF003913EE /* RunViewController.swift */,
 				F33F3BB01FC4C70A00F8456F /* Main.storyboard */,
 				F33F3BB31FC4C70A00F8456F /* Assets.xcassets */,
 				F33F3BB51FC4C70A00F8456F /* LaunchScreen.storyboard */,
@@ -271,6 +277,8 @@
 				F33F3BAF1FC4C70A00F8456F /* ViewController.swift in Sources */,
 				F33F3BAD1FC4C70A00F8456F /* AppDelegate.swift in Sources */,
 				A5F3324720320DF600E23C79 /* ProfileTrainingViewController.swift in Sources */,
+				A573A9C0203242AE003913EE /* TestingViewController.swift in Sources */,
+				A573A9C2203242BF003913EE /* RunViewController.swift in Sources */,
 				A5F33249203216F800E23C79 /* SwiftyJSON.swift in Sources */,
 				F3B94AC720226E0300AAFB1E /* CreateNewIDViewController.swift in Sources */,
 			);

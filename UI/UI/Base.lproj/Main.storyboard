@@ -116,6 +116,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Begin Training"/>
+                                <connections>
+                                    <action selector="trainingbegin:" destination="47O-l5-h3X" eventType="touchUpInside" id="15j-Yx-bIT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-oO-I6d">
                                 <rect key="frame" x="30" y="97" width="260" height="156"/>

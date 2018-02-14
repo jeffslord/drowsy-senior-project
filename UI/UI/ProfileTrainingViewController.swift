@@ -13,7 +13,8 @@ class ProfileTrainingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         //mwDevice = [MWMDevice sharedInstance];
         //[mwDevice setDelegate:self];
         // Do any additional setup after loading the view.
@@ -23,8 +24,19 @@ class ProfileTrainingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func trainingbegin(_ sender: Any) {
+        print("test")
+        let testurl = URL(string:"https:/jsonplaceholder.typicode.com/posts")
+        URLSession.shared.dataTask(with: testurl!){(data, response, error) in
+            if error != nil{
+                print(error ?? "Error not read")
+            }
+            let data = data
+            print(data ?? "Data not retrieved")
+        }
+        print("Finished button")
+    }
     
-
     /*
     // MARK: - Navigation
 
@@ -34,5 +46,5 @@ class ProfileTrainingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

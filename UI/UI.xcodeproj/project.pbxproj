@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		A573A9C0203242AE003913EE /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9BF203242AE003913EE /* TestingViewController.swift */; };
 		A573A9C2203242BF003913EE /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9C1203242BF003913EE /* RunViewController.swift */; };
-		A5A61ED22033ECBF0039AADD /* MWMEnum.h in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A61ECE2033ECBF0039AADD /* MWMEnum.h */; };
-		A5A61ED32033ECBF0039AADD /* MWMDelegate.h in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A61ECF2033ECBF0039AADD /* MWMDelegate.h */; };
-		A5A61ED42033ECBF0039AADD /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A61ED02033ECBF0039AADD /* libMWMSDK.a */; };
-		A5A61ED52033ECBF0039AADD /* MWMDevice.h in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A61ED12033ECBF0039AADD /* MWMDevice.h */; };
 		A5A61ED72033F2220039AADD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A61ED62033F2220039AADD /* ExternalAccessory.framework */; };
 		A5F3324720320DF600E23C79 /* ProfileTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */; };
 		A5F33249203216F800E23C79 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F33248203216F800E23C79 /* SwiftyJSON.swift */; };
@@ -46,10 +42,6 @@
 /* Begin PBXFileReference section */
 		A573A9BF203242AE003913EE /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A573A9C1203242BF003913EE /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
-		A5A61ECE2033ECBF0039AADD /* MWMEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MWMEnum.h; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/MWMEnum.h"; sourceTree = "<group>"; };
-		A5A61ECF2033ECBF0039AADD /* MWMDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MWMDelegate.h; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/MWMDelegate.h"; sourceTree = "<group>"; };
-		A5A61ED02033ECBF0039AADD /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMWMSDK.a; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/libMWMSDK.a"; sourceTree = "<group>"; };
-		A5A61ED12033ECBF0039AADD /* MWMDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MWMDevice.h; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/MWMDevice.h"; sourceTree = "<group>"; };
 		A5A61ED62033F2220039AADD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTrainingViewController.swift; sourceTree = "<group>"; };
 		A5F33248203216F800E23C79 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -75,10 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A61ED72033F2220039AADD /* ExternalAccessory.framework in Frameworks */,
-				A5A61ED42033ECBF0039AADD /* libMWMSDK.a in Frameworks */,
-				A5A61ED22033ECBF0039AADD /* MWMEnum.h in Frameworks */,
-				A5A61ED32033ECBF0039AADD /* MWMDelegate.h in Frameworks */,
-				A5A61ED52033ECBF0039AADD /* MWMDevice.h in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,10 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				A5A61ED62033F2220039AADD /* ExternalAccessory.framework */,
-				A5A61ED02033ECBF0039AADD /* libMWMSDK.a */,
-				A5A61ECF2033ECBF0039AADD /* MWMDelegate.h */,
-				A5A61ED12033ECBF0039AADD /* MWMDevice.h */,
-				A5A61ECE2033ECBF0039AADD /* MWMEnum.h */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

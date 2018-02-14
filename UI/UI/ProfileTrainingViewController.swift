@@ -14,6 +14,8 @@ class ProfileTrainingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //mwDevice = [MWMDevice sharedInstance];
+        //[mwDevice setDelegate:self];
         // Do any additional setup after loading the view.
     }
 

@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Foundation
 
 class CreateNewIDViewController: UIViewController {
-
+    
+    @IBOutlet weak var userid: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +24,13 @@ class CreateNewIDViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func receiveid(_ sender: Any) {
+        
+        
+        //userid.text = "This me ID"
+        
+    }
+    
     /*
     // MARK: - Navigation
 

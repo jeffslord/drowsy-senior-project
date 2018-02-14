@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RunViewController: UIViewController {
     var trainid: String?
@@ -22,7 +23,17 @@ class RunViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func tracking(_ sender: Any) {
+        
+        if let userid = trainid {
+            
+            let parameters: Parameters = ["id": userid, "activity": "tracking"]
+            
+            Alamofire.request("http://127.0.0.1:5000/index", method: .post, parameters: parameters)
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -26,8 +26,7 @@ class CreateNewIDViewController: UIViewController {
     
     @IBAction func receiveid(_ sender: Any) {
         
-        
-        //userid.text = "This me ID"
+        userid.text = "This me ID"
         
     }
     

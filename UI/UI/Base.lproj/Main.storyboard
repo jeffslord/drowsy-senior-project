@@ -137,7 +137,7 @@ Properly don Mindwave headset and click "Begin Training". When you hear a beep c
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uml-4I-ZIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="907"/>
+            <point key="canvasLocation" x="219.375" y="906.33802816901414"/>
         </scene>
         <!--Testing App-->
         <scene sceneID="6SY-BG-FmN">
@@ -264,6 +264,9 @@ Note: Data will not be saved! Note: Add border</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Begin Tracking"/>
+                                <connections>
+                                    <action selector="tracking:" destination="jsK-Le-gdT" eventType="touchUpInside" id="dpA-Me-Rsb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LP-xM-YLj">
                                 <rect key="frame" x="30" y="88" width="260" height="156"/>

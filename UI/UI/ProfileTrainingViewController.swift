@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileTrainingViewController: UIViewController {
     var trainid: String?
@@ -24,17 +25,16 @@ class ProfileTrainingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func trainingbegin(_ sender: Any) {
-        print("test")
-        let testurl = URL(string:"https:/jsonplaceholder.typicode.com/posts")
-        URLSession.shared.dataTask(with: testurl!){(data, response, error) in
-            if error != nil{
-                print(error ?? "Error not read")
-            }
-            let data = data
-            print(data ?? "Data not retrieved")
+        
+        
+        if let userid = trainid {
+            
+            let parameters: Parameters = ["id": userid, "activity": "train"]
+        
+            Alamofire.request("http://127.0.0.1:5000/index", method: .post, parameters: parameters)
         }
-        print("Finished button")
     }
     
     /*

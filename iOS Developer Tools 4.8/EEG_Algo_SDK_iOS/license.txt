@@ -1,0 +1,6 @@
+The license key below enables use of this SDK.  Refer to the accompanying
+Development Guide document for instructions on how to use this license key.
+
+WARNING!: *DO NOT* redistribute nor re-sell this license key!
+
+license key="NeuroSky_Release_To_GeneralFreeLicense_Use_Only_Jul 24 2017"

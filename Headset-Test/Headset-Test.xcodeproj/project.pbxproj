@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A583C9D02036366900B7337A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583C9CF2036366900B7337A /* AppDelegate.swift */; };
+		A583C9D22036366900B7337A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583C9D12036366900B7337A /* ViewController.swift */; };
+		A583C9D52036366900B7337A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A583C9D32036366900B7337A /* Main.storyboard */; };
+		A583C9D72036366900B7337A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A583C9D62036366900B7337A /* Assets.xcassets */; };
+		A583C9DA2036366900B7337A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A583C9D82036366900B7337A /* LaunchScreen.storyboard */; };
+		A583C9EA2036367B00B7337A /* Mindwave.h in Headers */ = {isa = PBXBuildFile; fileRef = A583C9E82036367B00B7337A /* Mindwave.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A583C9ED2036367B00B7337A /* Mindwave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A583C9E62036367B00B7337A /* Mindwave.framework */; };
+		A583C9EE2036367B00B7337A /* Mindwave.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A583C9E62036367B00B7337A /* Mindwave.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A583C9F7203636C300B7337A /* MWMEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = A583C9F3203636C300B7337A /* MWMEnum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A583C9F8203636C300B7337A /* MWMDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A583C9F4203636C300B7337A /* MWMDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A583C9F9203636C300B7337A /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A583C9F5203636C300B7337A /* libMWMSDK.a */; };
+		A583C9FA203636C300B7337A /* MWMDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = A583C9F6203636C300B7337A /* MWMDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A583C9EB2036367B00B7337A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A583C9C42036366900B7337A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A583C9E52036367B00B7337A;
+			remoteInfo = Mindwave;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A583C9F22036367B00B7337A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A583C9EE2036367B00B7337A /* Mindwave.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A583C9CC2036366900B7337A /* Headset-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Headset-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A583C9CF2036366900B7337A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A583C9D12036366900B7337A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A583C9D42036366900B7337A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A583C9D62036366900B7337A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A583C9D92036366900B7337A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A583C9DB2036366900B7337A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A583C9E62036367B00B7337A /* Mindwave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mindwave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A583C9E82036367B00B7337A /* Mindwave.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mindwave.h; sourceTree = "<group>"; };
+		A583C9E92036367B00B7337A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A583C9F3203636C300B7337A /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWMEnum.h; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/MWMEnum.h"; sourceTree = "<group>"; };
+		A583C9F4203636C300B7337A /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWMDelegate.h; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/MWMDelegate.h"; sourceTree = "<group>"; };
+		A583C9F5203636C300B7337A /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMWMSDK.a; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/libMWMSDK.a"; sourceTree = "<group>"; };
+		A583C9F6203636C300B7337A /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWMDevice.h; path = "../../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/MWMDevice.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A583C9C92036366900B7337A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A583C9ED2036367B00B7337A /* Mindwave.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A583C9E22036367B00B7337A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A583C9F9203636C300B7337A /* libMWMSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A583C9C32036366900B7337A = {
+			isa = PBXGroup;
+			children = (
+				A583C9CE2036366900B7337A /* Headset-Test */,
+				A583C9E72036367B00B7337A /* Mindwave */,
+				A583C9CD2036366900B7337A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A583C9CD2036366900B7337A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A583C9CC2036366900B7337A /* Headset-Test.app */,
+				A583C9E62036367B00B7337A /* Mindwave.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A583C9CE2036366900B7337A /* Headset-Test */ = {
+			isa = PBXGroup;
+			children = (
+				A583C9CF2036366900B7337A /* AppDelegate.swift */,
+				A583C9D12036366900B7337A /* ViewController.swift */,
+				A583C9D32036366900B7337A /* Main.storyboard */,
+				A583C9D62036366900B7337A /* Assets.xcassets */,
+				A583C9D82036366900B7337A /* LaunchScreen.storyboard */,
+				A583C9DB2036366900B7337A /* Info.plist */,
+			);
+			path = "Headset-Test";
+			sourceTree = "<group>";
+		};
+		A583C9E72036367B00B7337A /* Mindwave */ = {
+			isa = PBXGroup;
+			children = (
+				A583C9F5203636C300B7337A /* libMWMSDK.a */,
+				A583C9F4203636C300B7337A /* MWMDelegate.h */,
+				A583C9F6203636C300B7337A /* MWMDevice.h */,
+				A583C9F3203636C300B7337A /* MWMEnum.h */,
+				A583C9E82036367B00B7337A /* Mindwave.h */,
+				A583C9E92036367B00B7337A /* Info.plist */,
+			);
+			path = Mindwave;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A583C9E32036367B00B7337A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A583C9F8203636C300B7337A /* MWMDelegate.h in Headers */,
+				A583C9EA2036367B00B7337A /* Mindwave.h in Headers */,
+				A583C9FA203636C300B7337A /* MWMDevice.h in Headers */,
+				A583C9F7203636C300B7337A /* MWMEnum.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A583C9CB2036366900B7337A /* Headset-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A583C9DE2036366900B7337A /* Build configuration list for PBXNativeTarget "Headset-Test" */;
+			buildPhases = (
+				A583C9C82036366900B7337A /* Sources */,
+				A583C9C92036366900B7337A /* Frameworks */,
+				A583C9CA2036366900B7337A /* Resources */,
+				A583C9F22036367B00B7337A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A583C9EC2036367B00B7337A /* PBXTargetDependency */,
+			);
+			name = "Headset-Test";
+			productName = "Headset-Test";
+			productReference = A583C9CC2036366900B7337A /* Headset-Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A583C9E52036367B00B7337A /* Mindwave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A583C9EF2036367B00B7337A /* Build configuration list for PBXNativeTarget "Mindwave" */;
+			buildPhases = (
+				A583C9E12036367B00B7337A /* Sources */,
+				A583C9E22036367B00B7337A /* Frameworks */,
+				A583C9E32036367B00B7337A /* Headers */,
+				A583C9E42036367B00B7337A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mindwave;
+			productName = Mindwave;
+			productReference = A583C9E62036367B00B7337A /* Mindwave.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A583C9C42036366900B7337A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Sammy Eang";
+				TargetAttributes = {
+					A583C9CB2036366900B7337A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					A583C9E52036367B00B7337A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A583C9C72036366900B7337A /* Build configuration list for PBXProject "Headset-Test" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A583C9C32036366900B7337A;
+			productRefGroup = A583C9CD2036366900B7337A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A583C9CB2036366900B7337A /* Headset-Test */,
+				A583C9E52036367B00B7337A /* Mindwave */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A583C9CA2036366900B7337A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A583C9DA2036366900B7337A /* LaunchScreen.storyboard in Resources */,
+				A583C9D72036366900B7337A /* Assets.xcassets in Resources */,
+				A583C9D52036366900B7337A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A583C9E42036367B00B7337A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A583C9C82036366900B7337A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A583C9D22036366900B7337A /* ViewController.swift in Sources */,
+				A583C9D02036366900B7337A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A583C9E12036367B00B7337A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A583C9EC2036367B00B7337A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A583C9E52036367B00B7337A /* Mindwave */;
+			targetProxy = A583C9EB2036367B00B7337A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A583C9D32036366900B7337A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A583C9D42036366900B7337A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A583C9D82036366900B7337A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A583C9D92036366900B7337A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A583C9DC2036366900B7337A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A583C9DD2036366900B7337A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A583C9DF2036366900B7337A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Headset-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SP13.Headset-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A583C9E02036366900B7337A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Headset-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SP13.Headset-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A583C9F02036367B00B7337A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Mindwave/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/\"";
+				PRODUCT_BUNDLE_IDENTIFIER = SP13.Mindwave;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A583C9F12036367B00B7337A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Mindwave/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../iOS Developer Tools 4.8/MWM_Comm_SDK_for_iOS_V0.2.9/lib/\"";
+				PRODUCT_BUNDLE_IDENTIFIER = SP13.Mindwave;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A583C9C72036366900B7337A /* Build configuration list for PBXProject "Headset-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A583C9DC2036366900B7337A /* Debug */,
+				A583C9DD2036366900B7337A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A583C9DE2036366900B7337A /* Build configuration list for PBXNativeTarget "Headset-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A583C9DF2036366900B7337A /* Debug */,
+				A583C9E02036366900B7337A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A583C9EF2036367B00B7337A /* Build configuration list for PBXNativeTarget "Mindwave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A583C9F02036367B00B7337A /* Debug */,
+				A583C9F12036367B00B7337A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A583C9C42036366900B7337A /* Project object */;
+}

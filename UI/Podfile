@@ -6,6 +6,7 @@ target 'UI' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'SwiftySound', '~> 0.7'
   pod 'Alamofire', '~> 4.5'
 
   target 'UITests' do
@@ -17,5 +18,6 @@ target 'UI' do
     inherit! :search_paths
     # Pods for testing
   end
+
 
 end

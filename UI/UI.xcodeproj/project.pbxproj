@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		A573A9C0203242AE003913EE /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9BF203242AE003913EE /* TestingViewController.swift */; };
 		A573A9C2203242BF003913EE /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9C1203242BF003913EE /* RunViewController.swift */; };
+		A58980322047662F002211A5 /* Open Eyes.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802A2047662F002211A5 /* Open Eyes.wav */; };
+		A58980332047662F002211A5 /* Close Eyes.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802B2047662F002211A5 /* Close Eyes.wav */; };
+		A58980342047662F002211A5 /* Testing Opening Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802C2047662F002211A5 /* Testing Opening Sound.wav */; };
+		A58980352047662F002211A5 /* Testing Complete.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802D2047662F002211A5 /* Testing Complete.wav */; };
+		A58980362047662F002211A5 /* Training Opening Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802E2047662F002211A5 /* Training Opening Sound.wav */; };
+		A58980372047662F002211A5 /* Training Complete.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802F2047662F002211A5 /* Training Complete.wav */; };
+		A58980382047662F002211A5 /* Lightning Fast Piano Scales Audiobook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A58980302047662F002211A5 /* Lightning Fast Piano Scales Audiobook.mp3 */; };
+		A58980392047662F002211A5 /* Begin Testing &Training Instructions.wav in Resources */ = {isa = PBXBuildFile; fileRef = A58980312047662F002211A5 /* Begin Testing &Training Instructions.wav */; };
 		A5A61ED72033F2220039AADD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A61ED62033F2220039AADD /* ExternalAccessory.framework */; };
 		A5F3324720320DF600E23C79 /* ProfileTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */; };
 		A5F33249203216F800E23C79 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F33248203216F800E23C79 /* SwiftyJSON.swift */; };
@@ -52,6 +60,14 @@
 		8F0B31EA56EE54E966276C19 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A573A9BF203242AE003913EE /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A573A9C1203242BF003913EE /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
+		A589802A2047662F002211A5 /* Open Eyes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Open Eyes.wav"; sourceTree = "<group>"; };
+		A589802B2047662F002211A5 /* Close Eyes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Close Eyes.wav"; sourceTree = "<group>"; };
+		A589802C2047662F002211A5 /* Testing Opening Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Testing Opening Sound.wav"; sourceTree = "<group>"; };
+		A589802D2047662F002211A5 /* Testing Complete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Testing Complete.wav"; sourceTree = "<group>"; };
+		A589802E2047662F002211A5 /* Training Opening Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Training Opening Sound.wav"; sourceTree = "<group>"; };
+		A589802F2047662F002211A5 /* Training Complete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Training Complete.wav"; sourceTree = "<group>"; };
+		A58980302047662F002211A5 /* Lightning Fast Piano Scales Audiobook.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lightning Fast Piano Scales Audiobook.mp3"; sourceTree = "<group>"; };
+		A58980312047662F002211A5 /* Begin Testing &Training Instructions.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Begin Testing &Training Instructions.wav"; sourceTree = "<group>"; };
 		A5A61ED62033F2220039AADD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTrainingViewController.swift; sourceTree = "<group>"; };
 		A5F33248203216F800E23C79 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -102,6 +118,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A58980292047662F002211A5 /* App Audio Files */ = {
+			isa = PBXGroup;
+			children = (
+				A589802A2047662F002211A5 /* Open Eyes.wav */,
+				A589802B2047662F002211A5 /* Close Eyes.wav */,
+				A589802C2047662F002211A5 /* Testing Opening Sound.wav */,
+				A589802D2047662F002211A5 /* Testing Complete.wav */,
+				A589802E2047662F002211A5 /* Training Opening Sound.wav */,
+				A589802F2047662F002211A5 /* Training Complete.wav */,
+				A58980302047662F002211A5 /* Lightning Fast Piano Scales Audiobook.mp3 */,
+				A58980312047662F002211A5 /* Begin Testing &Training Instructions.wav */,
+			);
+			path = "App Audio Files";
+			sourceTree = "<group>";
+		};
 		A5A61ECD2033ECBF0039AADD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				F33F3BAC1FC4C70A00F8456F /* AppDelegate.swift */,
+				A58980292047662F002211A5 /* App Audio Files */,
 				F33F3BAE1FC4C70A00F8456F /* ViewController.swift */,
 				F3B94AC620226E0300AAFB1E /* CreateNewIDViewController.swift */,
 				A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */,
@@ -262,6 +294,11 @@
 					F33F3BA81FC4C70A00F8456F = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					F33F3BBC1FC4C70A00F8456F = {
 						CreatedOnToolsVersion = 9.1;
@@ -300,8 +337,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58980392047662F002211A5 /* Begin Testing &Training Instructions.wav in Resources */,
 				F33F3BB71FC4C70A00F8456F /* LaunchScreen.storyboard in Resources */,
+				A58980332047662F002211A5 /* Close Eyes.wav in Resources */,
+				A58980372047662F002211A5 /* Training Complete.wav in Resources */,
+				A58980322047662F002211A5 /* Open Eyes.wav in Resources */,
+				A58980362047662F002211A5 /* Training Opening Sound.wav in Resources */,
 				F33F3BB41FC4C70A00F8456F /* Assets.xcassets in Resources */,
+				A58980342047662F002211A5 /* Testing Opening Sound.wav in Resources */,
+				A58980352047662F002211A5 /* Testing Complete.wav in Resources */,
+				A58980382047662F002211A5 /* Lightning Fast Piano Scales Audiobook.mp3 in Resources */,
 				F33F3BB21FC4C70A00F8456F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,10 +409,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UI/Pods-UI-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

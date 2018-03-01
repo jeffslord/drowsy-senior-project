@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.6.0)
+  - SwiftySound (0.7.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - SwiftySound (~> 0.7)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  SwiftySound: bca0bb721690fb65249f4776cb0875abd98e9941
 
-PODFILE CHECKSUM: fac6836c34450b7d31b3515db57d8e0c9b1e0265
+PODFILE CHECKSUM: 564ccad9505ae7efdd34ee8bc5a83636806c2220
 
 COCOAPODS: 1.4.0

@@ -8,14 +8,18 @@
 
 import UIKit
 import Alamofire
+import SwiftySound
 
 class ProfileTrainingViewController: UIViewController {
     var trainid: String?
+    private var dogSound: Sound?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if let dogUrl = Bundle.main.url(forResource: "Begin Testing &Training Instructions", withExtension: "wav") {
+            dogSound = Sound(url: dogUrl)
+        }
         //mwDevice = [MWMDevice sharedInstance];
         //[mwDevice setDelegate:self];
         // Do any additional setup after loading the view.
@@ -29,12 +33,17 @@ class ProfileTrainingViewController: UIViewController {
     @IBAction func trainingbegin(_ sender: Any) {
         
         
-        if let userid = trainid {
+        /*if let userid = trainid {
             
             let parameters: Parameters = ["id": userid, "activity": "train"]
         
             Alamofire.request("http://127.0.0.1:5000/index", method: .post, parameters: parameters)
-        }
+        }*/
+        
+        Sound.play(file: "Begin Testing &Training Instructions", fileExtension: "wav", numberOfLoops: 0)
+        
+        Sound.play(file: "Training Opening Sound", fileExtension: "wav", numberOfLoops: 0)
+        
     }
     
     /*

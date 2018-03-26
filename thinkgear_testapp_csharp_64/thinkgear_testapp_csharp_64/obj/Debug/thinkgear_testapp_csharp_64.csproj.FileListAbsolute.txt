@@ -1,0 +1,11 @@
+d:\documents\visual studio 2012\Projects\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe.config
+d:\documents\visual studio 2012\Projects\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe
+d:\documents\visual studio 2012\Projects\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.pdb
+d:\documents\visual studio 2012\Projects\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.exe
+d:\documents\visual studio 2012\Projects\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.pdb
+C:\Users\Brandon\Desktop\Senior Project\Windows-Developer-Tools-3.2\Windows Developer Tools 3.2\Stream SDK for PC\Sample Project\x64\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.exe
+C:\Users\Brandon\Desktop\Senior Project\Windows-Developer-Tools-3.2\Windows Developer Tools 3.2\Stream SDK for PC\Sample Project\x64\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.pdb
+C:\Users\Brandon\Desktop\Senior Project\Windows-Developer-Tools-3.2\Windows Developer Tools 3.2\Stream SDK for PC\Sample Project\x64\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe.config
+C:\Users\Brandon\Desktop\Senior Project\Windows-Developer-Tools-3.2\Windows Developer Tools 3.2\Stream SDK for PC\Sample Project\x64\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe
+C:\Users\Brandon\Desktop\Senior Project\Windows-Developer-Tools-3.2\Windows Developer Tools 3.2\Stream SDK for PC\Sample Project\x64\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.pdb
+C:\Users\Brandon\Desktop\Senior Project\Windows-Developer-Tools-3.2\Windows Developer Tools 3.2\Stream SDK for PC\Sample Project\x64\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.csproj.CoreCompileInputs.cache

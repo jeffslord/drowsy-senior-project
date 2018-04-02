@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using libStreamSDK;
 using System.Threading;
+using System.IO;
 
 namespace thinkgear_testapp_csharp_64
 {
@@ -12,7 +13,14 @@ namespace thinkgear_testapp_csharp_64
     {
         static void Main(string[] args)
         {
+            bool _toFile = false;
             Console.WriteLine("Started...");
+
+            String _path = "C:/temp/output.csv";
+            //using (var tw = new StreamWriter(_path, true))
+            //{
+            //    tw.WriteLine("id,status,raw,trial,time");
+            //}
 
             NativeThinkgear thinkgear = new NativeThinkgear();
 
@@ -60,44 +68,92 @@ namespace thinkgear_testapp_csharp_64
                 Console.WriteLine("ERROR: TG_Connect() returned: " + errCode);
                 return;
             }
-
+            Console.Write("Enter ID: ");
+            String _id = Console.ReadLine();
+            Console.WriteLine(_id);
+            int _status = -1;
+            int _t = 1;
+            int _h = 0;
+            double _seconds = 0.0f;
+            DateTime _previousTime;
             /* Read 10 ThinkGear Packets from the connection, 1 Packet at a time */
             int packetsRead = 0;
-            while (packetsRead < 10000)
+            Console.WriteLine("Starting data collection...");
+            while (packetsRead < 9999999)
             {
-
                 /* Attempt to read a Packet of data from the connection */
                 errCode = NativeThinkgear.TG_ReadPackets(connectionID, 512);
                 // Console.WriteLine("TG_ReadPackets returned: " + errCode);
                 /* If TG_ReadPackets() was able to read a complete Packet of data... */
                 if (errCode == 1)
                 {
+                    if (packetsRead < 1024)
+                    {
+                        Console.WriteLine("Skipping Packet " + packetsRead);
+                        packetsRead++;
+                        continue;
+                    }
+                    if (packetsRead % 512 == 0)
+                    {
+                        _status = -1;
+                        _h = 0;
+                        _previousTime = DateTime.Now;
+                        _seconds = (DateTime.Now - _previousTime).TotalSeconds;
+                        Console.WriteLine("Seconds: " + _seconds);
+                        while (_status != 1 && _status != 0)
+                        {
+                            Console.Write("Trial: " + _t + " Packet: " + packetsRead + " Enter status (0 closed, 1 open): ");
+                            _status = int.Parse(Console.ReadLine());
+                        }
+                        _t++;
+                        Console.WriteLine("Starting trial for status: " + _status + "...");
+                        Thread.Sleep(2000);
+                    }
                     // packetsRead++;
-
                     /* If attention value has been updated by TG_ReadPackets()... */
                     //if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.TG_DATA_DELTA) != 0)
                     //{
-                        packetsRead++;
-                        /* Get and print out the updated attention value */
-                        // Console.WriteLine("New RAW value: : " + (int)NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW));
-                        Console.WriteLine("New Packet...");
-                        Console.WriteLine("RAW...");
-                        Console.WriteLine("\tRaw: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW));
-                        Console.WriteLine("\tDelta: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_DELTA));
-                        Console.WriteLine("\tTheta: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_THETA));
-                        Console.WriteLine("\tAlpha: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_ALPHA1));
-                        Console.WriteLine("\tBeta: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_BETA1));
-                        Console.WriteLine("\tGamma: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_GAMMA1));
-                        Console.WriteLine("LOG...");
-                        Console.WriteLine("\tRaw: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW)));
-                        Console.WriteLine("\tDelta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_DELTA)));
-                        Console.WriteLine("\tTheta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_THETA)));
-                        Console.WriteLine("\tAlpha: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_ALPHA1)));
-                        Console.WriteLine("\tBeta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_BETA1)));
-                        Console.WriteLine("\tGamma: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_GAMMA1)));
-                        Console.WriteLine();
+                    packetsRead++;
+                    _h++;
+                    
 
-                        // Thread.Sleep(1000);
+                    /* Get and print out the updated attention value */
+                    // Console.WriteLine("New RAW value: : " + (int)NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW));
+                    // Console.WriteLine("New Packet...");
+                    float _raw = NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW);
+                    DateTime _time = DateTime.Now;
+                    Console.WriteLine("RAW PACKET: TRIAL=" + packetsRead + ", ID=" + _id + ", STATUS=" + _status);
+                    Console.WriteLine("\tRaw: " + _raw);
+                    Trial _current = new Trial(_id, _status, _raw, packetsRead, _time);
+                    Console.WriteLine("\t" + _current);
+
+                    if (_toFile)
+                    {
+                        using (var tw = new StreamWriter(_path, true))
+                        {
+                            tw.WriteLine(_current);
+                        }
+                    }
+
+                    //if(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW) > 60)
+                    //{
+                    //    Thread.Sleep(5000);
+                    //}
+                    //Console.WriteLine("\tDelta: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_DELTA));
+                    //Console.WriteLine("\tTheta: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_THETA));
+                    //Console.WriteLine("\tAlpha: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_ALPHA1));
+                    //Console.WriteLine("\tBeta: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_BETA1));
+                    //Console.WriteLine("\tGamma: " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_GAMMA1));
+                    //Console.WriteLine("LOG...");
+                    //Console.WriteLine("\tRaw: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW)));
+                    //Console.WriteLine("\tDelta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_DELTA)));
+                    //Console.WriteLine("\tTheta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_THETA)));
+                    //Console.WriteLine("\tAlpha: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_ALPHA1)));
+                    //Console.WriteLine("\tBeta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_BETA1)));
+                    //Console.WriteLine("\tGamma: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_GAMMA1)));
+                    //Console.WriteLine();
+
+                    // Thread.Sleep(1000);
                     //} /* end "If attention value has been updated..." */
 
                 } /* end "If a Packet of data was read..." */
@@ -106,51 +162,54 @@ namespace thinkgear_testapp_csharp_64
 
             Console.WriteLine("auto read test begin:");
 
-            errCode = NativeThinkgear.TG_EnableAutoRead(connectionID, 1);
-            if (errCode == 0)
+            if (false)
             {
-                Console.WriteLine("Auto read trial...");
-                packetsRead = 0;
-                errCode = NativeThinkgear.MWM15_setFilterType(connectionID, NativeThinkgear.FilterType.MWM15_FILTER_TYPE_60HZ);
-                Console.WriteLine("MWM15_setFilterType called: " + errCode);
-                while (packetsRead < 2000) // it use as time
+                errCode = NativeThinkgear.TG_EnableAutoRead(connectionID, 1);
+                if (errCode == 0)
                 {
-                    /* If raw value has been updated ... */
-                    if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.TG_DATA_RAW) != 0)
+                    Console.WriteLine("Auto read trial...");
+                    packetsRead = 0;
+                    errCode = NativeThinkgear.MWM15_setFilterType(connectionID, NativeThinkgear.FilterType.MWM15_FILTER_TYPE_60HZ);
+                    Console.WriteLine("MWM15_setFilterType called: " + errCode);
+                    while (packetsRead < 2000) // it use as time
                     {
-                        if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.MWM15_DATA_FILTER_TYPE) != 0)
+                        /* If raw value has been updated ... */
+                        if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.TG_DATA_RAW) != 0)
                         {
-                            Console.WriteLine(" Find Filter Type:  " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.MWM15_DATA_FILTER_TYPE) + " index: " + packetsRead);
-                            //break;
-                        }
-                        /* Get and print out the updated raw value */
-                        //NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW);
-                        //Console.WriteLine("\tRaw: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW)));
-                        //Console.WriteLine("\tDelta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_DELTA)));
-                        //Console.WriteLine("\tTheta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_THETA)));
-                        //Console.WriteLine("\tAlpha: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_ALPHA1)));
-                        //Console.WriteLine("\tBeta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_BETA1)));
-                        //Console.WriteLine("\tGamma: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_GAMMA1)));
+                            if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.MWM15_DATA_FILTER_TYPE) != 0)
+                            {
+                                Console.WriteLine(" Find Filter Type:  " + NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.MWM15_DATA_FILTER_TYPE) + " index: " + packetsRead);
+                                //break;
+                            }
+                            /* Get and print out the updated raw value */
+                            //NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW);
+                            //Console.WriteLine("\tRaw: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW)));
+                            //Console.WriteLine("\tDelta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_DELTA)));
+                            //Console.WriteLine("\tTheta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_THETA)));
+                            //Console.WriteLine("\tAlpha: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_ALPHA1)));
+                            //Console.WriteLine("\tBeta: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_BETA1)));
+                            //Console.WriteLine("\tGamma: " + Math.Log10(NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_GAMMA1)));
 
-                        packetsRead++;
+                            packetsRead++;
 
-                        if (packetsRead == 800 || packetsRead == 1600)  // call twice interval than 1s (512)
-                        {
-                            errCode = NativeThinkgear.MWM15_getFilterType(connectionID);
-                            Console.WriteLine(" MWM15_getFilterType called: " + errCode);
+                            if (packetsRead == 800 || packetsRead == 1600)  // call twice interval than 1s (512)
+                            {
+                                errCode = NativeThinkgear.MWM15_getFilterType(connectionID);
+                                Console.WriteLine(" MWM15_getFilterType called: " + errCode);
+                            }
+
                         }
+
 
                     }
 
-                    
+                    errCode = NativeThinkgear.TG_EnableAutoRead(connectionID, 0); //stop
+                    Console.WriteLine("auto read test stoped: " + errCode);
                 }
-
-                errCode = NativeThinkgear.TG_EnableAutoRead(connectionID, 0); //stop
-                Console.WriteLine("auto read test stoped: "+ errCode);
-            }
-            else
-            {
-                Console.WriteLine("auto read test failed: " + errCode);
+                else
+                {
+                    Console.WriteLine("auto read test failed: " + errCode);
+                }
             }
 
             NativeThinkgear.TG_Disconnect(connectionID); // disconnect test

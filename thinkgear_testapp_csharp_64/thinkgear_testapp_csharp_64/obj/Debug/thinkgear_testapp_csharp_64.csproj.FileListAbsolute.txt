@@ -16,3 +16,10 @@ C:\Users\Brandon\Desktop\Senior Project\thinkgear_testapp_csharp_64\thinkgear_te
 C:\Users\Brandon\Desktop\Senior Project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.csproj.CoreCompileInputs.cache
 C:\Users\Brandon\Desktop\Senior Project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.exe
 C:\Users\Brandon\Desktop\Senior Project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.pdb
+D:\Development\git\repos\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.csprojResolveAssemblyReference.cache
+D:\Development\git\repos\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.csproj.CoreCompileInputs.cache
+D:\Development\git\repos\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.exe
+D:\Development\git\repos\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.pdb
+D:\Development\git\repos\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe.config
+D:\Development\git\repos\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe
+D:\Development\git\repos\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.pdb

@@ -13,7 +13,6 @@ namespace thinkgear_testapp_csharp_64
     {
         static void Main(string[] args)
         {
-
             while (true)
             {
                 bool toFile = true;
@@ -25,6 +24,7 @@ namespace thinkgear_testapp_csharp_64
                 string idPath = "data/ids.csv";
                 string backupPath = "data/";
 
+                #region INPUT
                 bool _idFound = false;
                 while (!_idFound)
                 {
@@ -48,12 +48,10 @@ namespace thinkgear_testapp_csharp_64
                     Console.Write("Invalid status value, try again (0=closed, 1=open): ");
                     userStatus = int.Parse(Console.ReadLine());
                 }
+                #endregion
 
                 CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile);
-
             }
-            /* Read 10 ThinkGear Packets from the connection, 1 Packet at a time */
-
         }
 
         public static void CollectData(string userId, int numTrials, int trialStatus, string savePath, int sampleRate, bool toFile)
@@ -63,22 +61,29 @@ namespace thinkgear_testapp_csharp_64
             int trialOffset = GetTrialOffset(savePath, userId, trialStatus);
             DateTime previousTime;
             double seconds = 0.0f;
+            int currentTrial = 0;
+            int packetsRead = 0;
+            int currentPacket = 0;
+            string comPortName = "COM3";
+
+            Console.WriteLine("[INFO] Starting data collection in 3 seconds...");
+            Thread.Sleep(3000);
 
             Console.WriteLine("[INFO] Initializing headset...");
             NativeThinkgear thinkgear = new NativeThinkgear();
-            Console.WriteLine("Version: " + NativeThinkgear.TG_GetVersion());
+            Console.WriteLine("[INFO] Version: " + NativeThinkgear.TG_GetVersion());
             /* Get a connection ID handle to ThinkGear */
             int connectionID = NativeThinkgear.TG_GetNewConnectionId();
-            Console.WriteLine("Connection ID: " + connectionID);
+            Console.WriteLine("[INFO] Connection ID: " + connectionID);
             if (connectionID < 0)
             {
-                Console.WriteLine("ERROR: TG_GetNewConnectionId() returned: " + connectionID);
+                Console.WriteLine("[ERROR] TG_GetNewConnectionId() returned: " + connectionID);
                 return;
             }
             int errCode = 0;
             /* Set/open stream (raw bytes) log file for connection */
             errCode = NativeThinkgear.TG_SetStreamLog(connectionID, "streamLog.txt");
-            Console.WriteLine("errCode for TG_SetStreamLog : " + errCode);
+            Console.WriteLine("[INFO] errCode for TG_SetStreamLog : " + errCode);
             if (errCode < 0)
             {
                 Console.WriteLine("[ERROR] TG_SetStreamLog() returned: " + errCode);
@@ -86,14 +91,13 @@ namespace thinkgear_testapp_csharp_64
             }
             /* Set/open data (ThinkGear values) log file for connection */
             errCode = NativeThinkgear.TG_SetDataLog(connectionID, "dataLog.txt");
-            Console.WriteLine("errCode for TG_SetDataLog : " + errCode);
+            Console.WriteLine("[INFO] errCode for TG_SetDataLog : " + errCode);
             if (errCode < 0)
             {
                 Console.WriteLine("[ERROR] TG_SetDataLog() returned: " + errCode);
                 return;
             }
             /* Attempt to connect the connection ID handle to serial port "COM5" */
-            string comPortName = "COM3";
             errCode = NativeThinkgear.TG_Connect(connectionID,
                 comPortName,
                 NativeThinkgear.Baudrate.TG_BAUD_57600,
@@ -107,13 +111,6 @@ namespace thinkgear_testapp_csharp_64
             #endregion
 
             #region PROCESS
-
-            int currentTrial = 0;
-            int packetsRead = 0;
-            int currentPacket = 0;
-
-            Console.WriteLine("[INFO] Starting data collection in 3 seconds...");
-            Thread.Sleep(3000);
 
             while (currentTrial < numTrials)
             {
@@ -144,7 +141,7 @@ namespace thinkgear_testapp_csharp_64
                         float _raw = NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW);
                         DateTime _time = DateTime.Now;
                         Trial _currentTrial = new Trial(userId, trialStatus, currentTrial + trialOffset, _raw, currentPacket, _time);
-                        Console.WriteLine("Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
+                        Console.WriteLine("[TRIAL] Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
                         if (toFile)
                         {
                             InsertTrialData(_currentTrial, savePath);

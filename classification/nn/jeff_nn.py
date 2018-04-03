@@ -44,8 +44,15 @@ def main():
   print(num_features)
   print(x_train)
 
+  COLUMN_NAMES = ["Label","X1", "X2"]
+
   # Specify that all features have real-value data
   feature_columns = [tf.feature_column.numeric_column("x", shape=[num_features])]
+
+  feature_columns = [
+      tf.feature_column.numeric_column(name)
+      for name in COLUMN_NAMES[1:]
+  ]
 
   # Build 3 layer DNN with 10, 20, 10 units respectively.
   # classifier = tf.estimator.DNNClassifier(feature_columns=feature_columns,

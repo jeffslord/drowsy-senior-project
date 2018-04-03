@@ -31,13 +31,17 @@ namespace thinkgear_testapp_csharp_64
                     Console.Write("[INPUT] Enter ID: ");
                     userId = Console.ReadLine();
                     _idFound = ValidateId(idPath, userId);
+                    if (!_idFound)
+                    {
+                        Console.Write("[ERROR] Invalid id try again.");
+                    }
                 }
 
                 Console.Write("[INPUT] Enter number of trials: ");
                 maxTrials = int.Parse(Console.ReadLine());
                 while (maxTrials < 1)
                 {
-                    Console.Write("Invalid number of trials, try again: ");
+                    Console.Write("[ERROR] Invalid number of trials, try again: ");
                     maxTrials = int.Parse(Console.ReadLine());
                 }
 
@@ -45,7 +49,7 @@ namespace thinkgear_testapp_csharp_64
                 userStatus = int.Parse(Console.ReadLine());
                 while (userStatus != 1 && userStatus != 0)
                 {
-                    Console.Write("Invalid status value, try again (0=closed, 1=open): ");
+                    Console.Write("[ERROR] Invalid status value, try again (0=closed, 1=open): ");
                     userStatus = int.Parse(Console.ReadLine());
                 }
                 #endregion

@@ -7,22 +7,27 @@ using System.Threading;
 using System.Threading.Tasks;
 using libStreamSDK;
 
-namespace thinkgear_testapp_csharp_64 {
-    class Program {
-        static void Main(string[] args) {
+namespace thinkgear_testapp_csharp_64
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
-            while (true) {
+            while (true)
+            {
                 bool toFile = true;
-                String userId = "";
+                string userId = "";
                 int userStatus = -1;
                 int maxTrials = -1;
                 int sampleRate = 512;
-                String savePath = "data/output.csv";
-                String idPath = "data/ids.csv";
-                String backupPath = "data/"
+                string savePath = "data/output.csv";
+                string idPath = "data/ids.csv";
+                string backupPath = "data/";
 
                 bool _idFound = false;
-                while (!_idFound) {
+                while (!_idFound)
+                {
                     Console.Write("[INPUT] Enter ID: ");
                     userId = Console.ReadLine();
                     _idFound = ValidateId(idPath, userId);
@@ -30,14 +35,16 @@ namespace thinkgear_testapp_csharp_64 {
 
                 Console.Write("[INPUT] Enter number of trials: ");
                 maxTrials = int.Parse(Console.ReadLine());
-                while (maxTrials < 1) {
+                while (maxTrials < 1)
+                {
                     Console.Write("Invalid number of trials, try again: ");
                     maxTrials = int.Parse(Console.ReadLine());
                 }
 
                 Console.Write("[INPUT] Enter status for trials (0=closed, 1=open): ");
                 userStatus = int.Parse(Console.ReadLine());
-                while (userStatus != 1 && userStatus != 0) {
+                while (userStatus != 1 && userStatus != 0)
+                {
                     Console.Write("Invalid status value, try again (0=closed, 1=open): ");
                     userStatus = int.Parse(Console.ReadLine());
                 }
@@ -49,7 +56,8 @@ namespace thinkgear_testapp_csharp_64 {
 
         }
 
-        public static void CollectData(String userId, int numTrials, int trialStatus, String savePath, int sampleRate, bool toFile) {
+        public static void CollectData(string userId, int numTrials, int trialStatus, string savePath, int sampleRate, bool toFile)
+        {
             #region INITIALIZE
 
             int trialOffset = GetTrialOffset(savePath, userId, trialStatus);
@@ -62,7 +70,8 @@ namespace thinkgear_testapp_csharp_64 {
             /* Get a connection ID handle to ThinkGear */
             int connectionID = NativeThinkgear.TG_GetNewConnectionId();
             Console.WriteLine("Connection ID: " + connectionID);
-            if (connectionID < 0) {
+            if (connectionID < 0)
+            {
                 Console.WriteLine("ERROR: TG_GetNewConnectionId() returned: " + connectionID);
                 return;
             }
@@ -70,14 +79,16 @@ namespace thinkgear_testapp_csharp_64 {
             /* Set/open stream (raw bytes) log file for connection */
             errCode = NativeThinkgear.TG_SetStreamLog(connectionID, "streamLog.txt");
             Console.WriteLine("errCode for TG_SetStreamLog : " + errCode);
-            if (errCode < 0) {
+            if (errCode < 0)
+            {
                 Console.WriteLine("[ERROR] TG_SetStreamLog() returned: " + errCode);
                 return;
             }
             /* Set/open data (ThinkGear values) log file for connection */
             errCode = NativeThinkgear.TG_SetDataLog(connectionID, "dataLog.txt");
             Console.WriteLine("errCode for TG_SetDataLog : " + errCode);
-            if (errCode < 0) {
+            if (errCode < 0)
+            {
                 Console.WriteLine("[ERROR] TG_SetDataLog() returned: " + errCode);
                 return;
             }
@@ -87,7 +98,8 @@ namespace thinkgear_testapp_csharp_64 {
                 comPortName,
                 NativeThinkgear.Baudrate.TG_BAUD_57600,
                 NativeThinkgear.SerialDataFormat.TG_STREAM_PACKETS);
-            if (errCode < 0) {
+            if (errCode < 0)
+            {
                 Console.WriteLine("[ERROR] TG_Connect() returned: " + errCode);
                 return;
             }
@@ -103,22 +115,27 @@ namespace thinkgear_testapp_csharp_64 {
             Console.WriteLine("[INFO] Starting data collection in 3 seconds...");
             Thread.Sleep(3000);
 
-            while (currentTrial < numTrials) {
+            while (currentTrial < numTrials)
+            {
                 /* Attempt to read a Packet of data from the connection */
                 errCode = NativeThinkgear.TG_ReadPackets(connectionID, 1);
                 /* If TG_ReadPackets() was able to read a complete Packet of data... */
-                if (errCode == 1) {
+                if (errCode == 1)
+                {
                     /* The raw data was updated since the last call */
-                    if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.TG_DATA_RAW) != 0) {
+                    if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.TG_DATA_RAW) != 0)
+                    {
                         /* Skip the first 2 seconds to avoid bad data */
                         Console.WriteLine("[INFO] Skipping packets...");
-                        if (currentPacket < sampleRate * 2) {
+                        if (currentPacket < sampleRate * 2)
+                        {
                             Console.Write("\r[INFO] Skipping Packet (" + currentPacket + "/" + sampleRate * 2 + ")");
                             packetsRead++;
                             currentPacket++;
                             continue;
                         }
-                        if (currentPacket % sampleRate == 0) {
+                        if (currentPacket % sampleRate == 0)
+                        {
                             currentPacket = 0;
                             currentTrial++;
                             previousTime = DateTime.Now;
@@ -128,7 +145,8 @@ namespace thinkgear_testapp_csharp_64 {
                         DateTime _time = DateTime.Now;
                         Trial _currentTrial = new Trial(userId, trialStatus, currentTrial + trialOffset, _raw, currentPacket, _time);
                         Console.WriteLine("Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
-                        if (toFile) {
+                        if (toFile)
+                        {
                             InsertTrialData(_currentTrial, savePath);
                         }
                         packetsRead++;
@@ -150,16 +168,21 @@ namespace thinkgear_testapp_csharp_64 {
             #endregion
         }
 
-        public static void InsertTrialData(Trial trial, String filePath) {
-            using(var tw = new StreamWriter(filePath, true)) {
+        public static void InsertTrialData(Trial trial, string filePath)
+        {
+            using(var tw = new StreamWriter(filePath, true))
+            {
                 tw.WriteLine(trial);
             }
         }
 
-        public static bool ValidateId(String filePath, String id) {
-            using(var reader = new StreamReader(filePath)) {
+        public static bool ValidateId(string filePath, string id)
+        {
+            using(var reader = new StreamReader(filePath))
+            {
                 List<string> ids = new List<string>();
-                while (!reader.EndOfStream) {
+                while (!reader.EndOfStream)
+                {
                     var line = reader.ReadLine();
                     var values = line.Split(',');
                     ids.Add(values[0]);
@@ -170,10 +193,13 @@ namespace thinkgear_testapp_csharp_64 {
                     return false;
             }
         }
-        public static int GetTrialOffset(String filePath, String id, int status) {
-            using(var reader = new StreamReader(filePath)) {
+        public static int GetTrialOffset(string filePath, string id, int status)
+        {
+            using(var reader = new StreamReader(filePath))
+            {
                 List<int> trials = new List<int>();
-                while (!reader.EndOfStream) {
+                while (!reader.EndOfStream)
+                {
                     var line = reader.ReadLine();
                     var values = line.Split(',');
                     if (values[0] == id && int.Parse(values[1]) == status && !trials.Contains(int.Parse(values[2])))
@@ -190,17 +216,21 @@ namespace thinkgear_testapp_csharp_64 {
                 return max;
             }
         }
-        public static void BackupSave(String filePath, String backupPath) {
-            String base = "output_backup";
+        public static void BackupSave(string filePath, string backupPath)
+        {
+            string baseName = "output_backup";
             int count = 1;
-            String end = ".csv";
+            string end = ".csv";
             bool found = false;
 
             string[] files = Directory.GetFiles(backupPath);
-            while (!found) {
-                String path = base + count.ToString() + end;
-                foreach (string fileName in files) {
-                    if (path == Path.GetFileName(fileName)) {
+            while (!found)
+            {
+                string path = baseName + count.ToString() + end;
+                foreach (string fileName in files)
+                {
+                    if (path == Path.GetFileName(fileName))
+                    {
                         count++;
                         break;
                     }

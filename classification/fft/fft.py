@@ -10,6 +10,8 @@ data2 = np.array([49.0,50.0,50.0,49.0,50.0,49.0,49.0,50.0,49.0,50.0,50.0,49.0,49
 #? sampling rate (sampling frequency) - the number of samples per seconds
 #? sampling time - the time interval between successive samples
 
+sampling_rate = 512
+
 # def test1():
 #     f = 10 # Frequency
 #     f_s = 100 # Sampling rate

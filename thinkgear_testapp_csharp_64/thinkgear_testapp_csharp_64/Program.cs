@@ -62,6 +62,7 @@ namespace thinkgear_testapp_csharp_64
         {
             #region INITIALIZE
 
+            Console.WriteLine("[INFO] Finding trial offset...");
             int trialOffset = GetTrialOffset(savePath, userId, trialStatus);
             DateTime previousTime;
             double seconds = 0.0f;
@@ -115,7 +116,6 @@ namespace thinkgear_testapp_csharp_64
             #endregion
 
             #region PROCESS
-
             while (currentTrial < numTrials)
             {
                 /* Attempt to read a Packet of data from the connection */

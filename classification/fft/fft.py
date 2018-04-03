@@ -15,20 +15,6 @@ sampling_rate = 512
 # def test1():
 #     f = 10 # Frequency
 #     f_s = 100 # Sampling rate
-#
-#     t = np.linspace(0,2,2*f_s,endpoint=False)
-#     x = np.sin(f * 2 * np.pi * t)
-#
-#     fig, ax = plt.subplots()
-#     ax.plot(t, x)
-#     plt.show()
-#
-#
-#     X = fftpack.fft(x)
-#     freqs = fftpack.fftfreq(len(x)) * f_s
-#     fig, ax = plt.subplots()
-#     ax.stem(freqs, np.abs(X))
-#     plt.show()
 
 def test2():
     #! Process

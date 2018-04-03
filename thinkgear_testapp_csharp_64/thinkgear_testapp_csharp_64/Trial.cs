@@ -18,6 +18,6 @@ public class Trial {
     }
 
     public override string ToString() {
-        return (this.id + "," + this.status + "," + this.trial + "," + this.raw + "," + this.packet + "," + this.time);
+        return (this.id + "," + this.status + "," + this.trial + "," + this.packet + "," + this.raw + "," + this.time);
     }
 }

@@ -20,9 +20,9 @@ namespace thinkgear_testapp_csharp_64
                 int userStatus = -1;
                 int maxTrials = -1;
                 int sampleRate = 512;
-                string savePath = "data/output.csv";
+                string savePath = "data/output_raw.csv";
                 string idPath = "data/ids.csv";
-                string backupPath = "data/";
+                string backupPath = "data";
 
                 #region INPUT
                 bool _idFound = false;
@@ -219,7 +219,7 @@ namespace thinkgear_testapp_csharp_64
         }
         public static void BackupSave(string filePath, string backupPath)
         {
-            string baseName = "output_backup";
+            string baseName = "output_raw_backup";
             int count = 1;
             string end = ".csv";
             bool found = false;
@@ -227,7 +227,7 @@ namespace thinkgear_testapp_csharp_64
             string[] files = Directory.GetFiles(backupPath);
             while (!found)
             {
-                string path = baseName + count.ToString() + end;
+                string path = backupPath + "/" + baseName + count.ToString() + end;
                 foreach (string fileName in files)
                 {
                     if (path == Path.GetFileName(fileName))

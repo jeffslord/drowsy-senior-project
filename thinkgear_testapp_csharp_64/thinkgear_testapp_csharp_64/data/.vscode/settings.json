@@ -1,0 +1,4 @@
+{
+    "python.formatting.provider": "autopep8",
+    "python.pythonPath": "/Users/Jeff/envs/36/bin/python"
+}

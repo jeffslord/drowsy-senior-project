@@ -30,7 +30,7 @@ Sound.play(file: "dog", fileExtension: "wav", numberOfLoops: 2)
 ```
 The above will play the sound three times.
 
-Specify a negative number of loops to play the sound continously in an intinite loop:
+Specify a negative number of loops to play the sound continously in an infinite loop:
 
 ```swift
 Sound.play(file: "dog", fileExtension: "wav", numberOfLoops: -1)
@@ -89,7 +89,7 @@ mySound.play { completed in
 ```
 
 <aside class="warning">
-The callback is not called if the sound was stopped, interupted or in case of a playback error.
+The callback is not called if the sound was stopped, interrupted or in case of a playback error.
 </aside>
 
 ## Features
@@ -97,21 +97,25 @@ The callback is not called if the sound was stopped, interupted or in case of a 
 - [x] Loops
 - [x] Infinite loops
 - [x] Playing the same sound multiple times simultaneously
+- [x] Stopping all sounds with a global static method
+- [x] Ability to pause and resume
 - [x] Adjusting sound volume
 - [x] Callbacks
 - [x] Global static variable to enable/disable all sounds
 
 ## Requirements
-- Swift 3
-- Xcode 8.0 or later
+- Swift 4
+- Xcode 9.0 or later
 - iOS 8.0 or later
 - tvOS 9.0 or later
 - macOS 10.9 or later
 
+For Xcode 8 and Swift 3 support, please use SwiftySound version `0.7.0`.
+
 ## Installation
 ### Installation with CocoaPods
 
-[CocoaPods](http://cocoapods.org/) is a dependency manager which automates and simplifies the process of using 3rd-party libraries in your projects. See the [Get Started](http://cocoapods.org/#get_started) section for more details.
+[CocoaPods](http://cocoapods.org/) is a dependency manager which automates and simplifies the process of using third-party libraries in your projects. See the [Get Started](http://cocoapods.org/#get_started) section for more details.
 
 #### Podfile
 ```ruby

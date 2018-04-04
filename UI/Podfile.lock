@@ -1,15 +1,24 @@
 PODS:
-  - Alamofire (4.6.0)
-  - SwiftySound (0.7.0)
+  - Alamofire (4.7.1)
+  - RxBluetoothKit (5.0.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SwiftySound (1.0.0)
+  - SwiftyTimer (2.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5)
-  - SwiftySound (~> 0.7)
+  - Alamofire
+  - RxBluetoothKit
+  - SwiftySound
+  - SwiftyTimer
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  SwiftySound: bca0bb721690fb65249f4776cb0875abd98e9941
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  RxBluetoothKit: 29fe5032554aac71c9eeec1f249f4f44205cf988
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftySound: b9c3370956fd4ed65ed79d45563070077a50a2cd
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
 
-PODFILE CHECKSUM: 564ccad9505ae7efdd34ee8bc5a83636806c2220
+PODFILE CHECKSUM: bf0cb6427054672171d5a89dc61947acad3eaec2
 
 COCOAPODS: 1.4.0

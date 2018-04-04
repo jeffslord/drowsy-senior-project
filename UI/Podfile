@@ -1,13 +1,15 @@
 # Uncomment the next line to define a global platform for your project
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '11.0'
+platform :ios, '11.3'
 
 target 'UI' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'SwiftySound', '~> 0.7'
-  pod 'Alamofire', '~> 4.5'
+  pod 'SwiftySound'
+  pod 'Alamofire'
+  pod 'RxBluetoothKit'
+  pod 'SwiftyTimer'
 
   target 'UITests' do
     inherit! :search_paths

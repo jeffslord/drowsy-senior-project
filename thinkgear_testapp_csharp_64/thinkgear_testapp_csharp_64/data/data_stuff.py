@@ -31,7 +31,12 @@ ff = fftpack.fft(x)
 freqs = fftpack.fftfreq(len(x)) * sampling_rate
 
 fig, ax = plt.subplots()
-ax.plot(t_half, np.abs(ff[0:256]))
+ax.plot(t, x)
+plt.ylabel('amplitude')
+plt.xlabel('time (512 samples per second)')
+
+fig, ax = plt.subplots()
+ax.stem(t_half, np.abs(ff[0:256]))
 plt.ylabel('amplitude')
 plt.xlabel('time (512 samples per second)')
 

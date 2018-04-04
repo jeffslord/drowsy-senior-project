@@ -20,8 +20,10 @@ namespace thinkgear_testapp_csharp_64
                 int userStatus = -1;
                 int maxTrials = -1;
                 int sampleRate = 512;
-                string savePath = "data/output_raw.csv";
-                string idPath = "data/ids.csv";
+                string savePath = Path.Combine("..", "..", "data", "output_raw.csv");
+                // string savePath = "data/output_raw.csv";
+                string idPath = Path.Combine("..", "..", "data", "ids.csv");
+                // string idPath = "data/ids.csv";
                 string backupPath = "data";
 
                 #region INPUT
@@ -36,7 +38,6 @@ namespace thinkgear_testapp_csharp_64
                         Console.Write("[ERROR] Invalid id try again.");
                     }
                 }
-
                 Console.Write("[INPUT] Enter number of trials: ");
                 maxTrials = int.Parse(Console.ReadLine());
                 while (maxTrials < 1)

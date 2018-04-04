@@ -17,7 +17,7 @@ with open(DATA_PATH, 'r') as file:
     _trial = -1
     _i = 0
     for row in reader:
-        if((row[0] != _id or row[1] != _status or row[2] != _trial)):
+        if(row[0] != _id or row[1] != _status or row[2] != _trial):
             if(len(_organized) > 0):
                 print("id=" + str(_id) + " status=" +
                       str(_status) + " trial=" + str(_trial))
@@ -33,6 +33,7 @@ with open(DATA_PATH, 'r') as file:
         _i += 1
     print("id=" + _id + " status=" + _status + " trial=" + _trial)
     print(_organized)
+    ALL_ORGANIZED.append(_organized)
 
 f = open(OUTPUT_PATH, "w+")
 f.close()

@@ -128,8 +128,7 @@ namespace thinkgear_testapp_csharp_64
                     if (NativeThinkgear.TG_GetValueStatus(connectionID, NativeThinkgear.DataType.TG_DATA_RAW) != 0)
                     {
                         /* Skip the first 2 seconds to avoid bad data */
-                        Console.WriteLine("[INFO] Skipping packets...");
-                        if (currentPacket < sampleRate * 2)
+                        if (packetsRead < sampleRate * 2)
                         {
                             Console.Write("\r[INFO] Skipping Packet (" + currentPacket + "/" + sampleRate * 2 + ")");
                             packetsRead++;

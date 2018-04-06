@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import csv
 
 PLOT = False
+FREQ = False
 DATA_PATH = "output_organized.csv"
 OUTPUT_PATH = "output_fft.csv"
 FFT_OUTPUT = []
@@ -40,7 +41,10 @@ def fft(row):
     x = np.subtract(data, np.average(data))
     #! fft
     ff = fftpack.fft(x)
-    freqs = fftpack.fftfreq(len(x)) * sampling_rate
+
+    if(FREQ):
+        freqs = fftpack.fftfreq(len(x), 1.0/5.0)
+        print(freqs)
 
     if(PLOT):
         fig, ax = plt.subplots()

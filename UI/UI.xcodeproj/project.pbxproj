@@ -9,17 +9,12 @@
 /* Begin PBXBuildFile section */
 		A54D85A12072F55A0091D8E2 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54D85A02072F55A0091D8E2 /* ExternalAccessory.framework */; };
 		A54D85A420746A130091D8E2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54D85A320746A120091D8E2 /* CoreBluetooth.framework */; };
+		A558370C20756515008CC87E /* Senior Project Training Sounds.aif in Resources */ = {isa = PBXBuildFile; fileRef = A558370B20756515008CC87E /* Senior Project Training Sounds.aif */; };
+		A558370E20759F15008CC87E /* Drowsy Alert.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A558370D20759F15008CC87E /* Drowsy Alert.m4a */; };
 		A568E3282048A76D00990810 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A568E3272048A76D00990810 /* libMWMSDK.a */; };
 		A56CA0FA20727EA30013845A /* mwm.m in Sources */ = {isa = PBXBuildFile; fileRef = A56CA0F920727EA30013845A /* mwm.m */; };
 		A573A9C0203242AE003913EE /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9BF203242AE003913EE /* TestingViewController.swift */; };
 		A573A9C2203242BF003913EE /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A9C1203242BF003913EE /* RunViewController.swift */; };
-		A58980322047662F002211A5 /* Open Eyes.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802A2047662F002211A5 /* Open Eyes.wav */; };
-		A58980332047662F002211A5 /* Close Eyes.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802B2047662F002211A5 /* Close Eyes.wav */; };
-		A58980342047662F002211A5 /* Testing Opening Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802C2047662F002211A5 /* Testing Opening Sound.wav */; };
-		A58980352047662F002211A5 /* Testing Complete.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802D2047662F002211A5 /* Testing Complete.wav */; };
-		A58980362047662F002211A5 /* Training Opening Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802E2047662F002211A5 /* Training Opening Sound.wav */; };
-		A58980372047662F002211A5 /* Training Complete.wav in Resources */ = {isa = PBXBuildFile; fileRef = A589802F2047662F002211A5 /* Training Complete.wav */; };
-		A58980392047662F002211A5 /* Begin Testing &Training Instructions.wav in Resources */ = {isa = PBXBuildFile; fileRef = A58980312047662F002211A5 /* Begin Testing &Training Instructions.wav */; };
 		A5F3324720320DF600E23C79 /* ProfileTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */; };
 		B6213F470F8897B9BA9894F4 /* Pods_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639EAB8187B2B4530006D13C /* Pods_UI.framework */; };
 		C4F14AE5F7D3F8A86232E7D6 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0B31EA56EE54E966276C19 /* Pods_UITests.framework */; };
@@ -62,6 +57,8 @@
 		A54D85A02072F55A0091D8E2 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		A54D85A22072F55B0091D8E2 /* UI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UI.entitlements; sourceTree = "<group>"; };
 		A54D85A320746A120091D8E2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		A558370B20756515008CC87E /* Senior Project Training Sounds.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Senior Project Training Sounds.aif"; path = "../../../../../../Desktop/App Audio Files/Senior Project Training Sounds.aif"; sourceTree = "<group>"; };
+		A558370D20759F15008CC87E /* Drowsy Alert.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Drowsy Alert.m4a"; path = "../../../../../../Desktop/App Audio Files/Drowsy Alert.m4a"; sourceTree = "<group>"; };
 		A568E3242048A76D00990810 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
 		A568E3252048A76D00990810 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
 		A568E3262048A76D00990810 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
@@ -70,13 +67,6 @@
 		A56CA0F920727EA30013845A /* mwm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = mwm.m; path = UI/mwm.m; sourceTree = "<group>"; };
 		A573A9BF203242AE003913EE /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A573A9C1203242BF003913EE /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
-		A589802A2047662F002211A5 /* Open Eyes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Open Eyes.wav"; sourceTree = "<group>"; };
-		A589802B2047662F002211A5 /* Close Eyes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Close Eyes.wav"; sourceTree = "<group>"; };
-		A589802C2047662F002211A5 /* Testing Opening Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Testing Opening Sound.wav"; sourceTree = "<group>"; };
-		A589802D2047662F002211A5 /* Testing Complete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Testing Complete.wav"; sourceTree = "<group>"; };
-		A589802E2047662F002211A5 /* Training Opening Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Training Opening Sound.wav"; sourceTree = "<group>"; };
-		A589802F2047662F002211A5 /* Training Complete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Training Complete.wav"; sourceTree = "<group>"; };
-		A58980312047662F002211A5 /* Begin Testing &Training Instructions.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Begin Testing &Training Instructions.wav"; sourceTree = "<group>"; };
 		A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTrainingViewController.swift; sourceTree = "<group>"; };
 		A8A02004BCE7761A8ECDB8A7 /* Pods-UIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIUITests/Pods-UIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F33F3BA91FC4C70A00F8456F /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,20 +129,6 @@
 			path = UI/libn;
 			sourceTree = SOURCE_ROOT;
 		};
-		A58980292047662F002211A5 /* App Audio Files */ = {
-			isa = PBXGroup;
-			children = (
-				A589802A2047662F002211A5 /* Open Eyes.wav */,
-				A589802B2047662F002211A5 /* Close Eyes.wav */,
-				A589802C2047662F002211A5 /* Testing Opening Sound.wav */,
-				A589802D2047662F002211A5 /* Testing Complete.wav */,
-				A589802E2047662F002211A5 /* Training Opening Sound.wav */,
-				A589802F2047662F002211A5 /* Training Complete.wav */,
-				A58980312047662F002211A5 /* Begin Testing &Training Instructions.wav */,
-			);
-			path = "App Audio Files";
-			sourceTree = "<group>";
-		};
 		A5A61ECD2033ECBF0039AADD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,16 +181,17 @@
 		F33F3BAB1FC4C70A00F8456F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A568E3232048A76D00990810 /* libn */,
 				A54D85A22072F55B0091D8E2 /* UI.entitlements */,
 				F33F3BAC1FC4C70A00F8456F /* AppDelegate.swift */,
-				A58980292047662F002211A5 /* App Audio Files */,
 				F33F3BAE1FC4C70A00F8456F /* ViewController.swift */,
-				A568E3232048A76D00990810 /* libn */,
 				F3B94AC620226E0300AAFB1E /* CreateNewIDViewController.swift */,
 				A5F3324620320DF600E23C79 /* ProfileTrainingViewController.swift */,
 				A573A9BF203242AE003913EE /* TestingViewController.swift */,
 				A573A9C1203242BF003913EE /* RunViewController.swift */,
 				F33F3BB01FC4C70A00F8456F /* Main.storyboard */,
+				A558370B20756515008CC87E /* Senior Project Training Sounds.aif */,
+				A558370D20759F15008CC87E /* Drowsy Alert.m4a */,
 				F33F3BB31FC4C70A00F8456F /* Assets.xcassets */,
 				F33F3BB51FC4C70A00F8456F /* LaunchScreen.storyboard */,
 				F33F3BB81FC4C70A00F8456F /* Info.plist */,
@@ -365,16 +342,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58980392047662F002211A5 /* Begin Testing &Training Instructions.wav in Resources */,
 				F33F3BB71FC4C70A00F8456F /* LaunchScreen.storyboard in Resources */,
-				A58980332047662F002211A5 /* Close Eyes.wav in Resources */,
-				A58980372047662F002211A5 /* Training Complete.wav in Resources */,
-				A58980322047662F002211A5 /* Open Eyes.wav in Resources */,
-				A58980362047662F002211A5 /* Training Opening Sound.wav in Resources */,
 				F33F3BB41FC4C70A00F8456F /* Assets.xcassets in Resources */,
-				A58980342047662F002211A5 /* Testing Opening Sound.wav in Resources */,
-				A58980352047662F002211A5 /* Testing Complete.wav in Resources */,
+				A558370E20759F15008CC87E /* Drowsy Alert.m4a in Resources */,
 				F33F3BB21FC4C70A00F8456F /* Main.storyboard in Resources */,
+				A558370C20756515008CC87E /* Senior Project Training Sounds.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

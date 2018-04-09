@@ -26,7 +26,7 @@ class ProfileTrainingViewController: UIViewController,MWMDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let trainUrl = Bundle.main.url(forResource: "Begin Testing &Training Instructions", withExtension: "wav") {
+        if let trainUrl = Bundle.main.url(forResource: "Senior Project Training Sounds", withExtension: "aif") {
             trainSound = Sound(url: trainUrl)
         }
         
@@ -51,33 +51,35 @@ class ProfileTrainingViewController: UIViewController,MWMDelegate {
             Alamofire.request("http://127.0.0.1:5000/index", method: .post, parameters: parameters)
         }*/
         
-        Sound.play(file: "Begin Testing &Training Instructions", fileExtension: "wav", numberOfLoops: 0)
+        Sound.play(file: "Senior Project Training Sounds", fileExtension: "aif", numberOfLoops: 0)
         
-        mwm?.scanDevice()
-        mwm?.enableLogging(withOptions: 1)
-        mwm?.enableConsoleLog(true)
-        brainWaveDataLocation = (mwm?.enableLogging(withOptions: 1))!
-        delay(5) {
-            self.mwm?.stopLogging()
+        Timer.after(20.seconds) {
+            self.mwm?.scanDevice()
+            self.mwm?.enableLogging(withOptions: 1)
+            self.mwm?.enableConsoleLog(true)
+            self.brainWaveDataLocation = (self.mwm?.enableLogging(withOptions: 1))!
             
-            print("This is the file location:" + self.brainWaveDataLocation)
-            
-            var fileName = String(self.brainWaveDataLocation.characters.suffix(27))
-            fileName.removeLast(4)
-            print("This is the file name:" + fileName)
-            
-            /*let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            
-            let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
-            print("FilePath: \(fileURL.path)")*/
-            
-            let fileURL = Bundle.main.url(forResource: "", withExtension: "txt")
-            
-            /*Alamofire.upload(fileURL!, to: "https://httpbin.org/post").responseJSON { response in
-                debugPrint(response)
-            }*/
+                Timer.after(5.seconds) {
+                    self.mwm?.stopScanDevice()
+                    self.mwm?.stopLogging()
+                    self.mwm?.disconnectDevice()
+                    
+                    print("This is the file location:" + self.brainWaveDataLocation)
+                    
+                    var fileName = String(self.brainWaveDataLocation.characters.suffix(27))
+                    fileName.removeLast(4)
+                    print("This is the file name:" + fileName)
+                    
+                    let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                    
+                    let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+                    print("FilePath: \(fileURL.path)")
+                    
+                    Alamofire.upload(fileURL, to: "https://httpbin.org/post").responseJSON { response in
+                        debugPrint(response)
+                    }
+                }
         }
-        
     }
     
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
@@ -91,11 +93,6 @@ class ProfileTrainingViewController: UIViewController,MWMDelegate {
     
     func didDisconnect() {
         print("Headset Disconnected")
-    }
-    
-    func delay(_ delay:Double, closure:@escaping ()->()) {
-        let when = DispatchTime.now() + delay
-        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
     
 }

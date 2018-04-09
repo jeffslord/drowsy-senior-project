@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var id: UITextField!
     
         override func viewDidLoad() {
             super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+            
+            self.hideKeyboardWhenTappedAround()
+
+            self.id.delegate = self
+            
     }
     
     @IBAction func training(_ sender: Any) {
@@ -50,6 +54,23 @@ class ViewController: UIViewController {
         }
     }
     
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
 }
 

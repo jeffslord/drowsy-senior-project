@@ -117,6 +117,7 @@ namespace thinkgear_testapp_csharp_64
             #endregion
 
             #region PROCESS
+            List<Trial> trialList = new List<Trial>();
             while (currentTrial < numTrials)
             {
                 /* Attempt to read a Packet of data from the connection */
@@ -141,15 +142,21 @@ namespace thinkgear_testapp_csharp_64
                             currentTrial++;
                             previousTime = DateTime.Now;
                             seconds = (DateTime.Now - previousTime).TotalSeconds;
+                            if (toFile && trialList.Count > 0)
+                                InsertTrialData(trialList, savePath);
+                            trialList.Clear();
                         }
+                        //! Set up data for Trial
                         float _raw = NativeThinkgear.TG_GetValue(connectionID, NativeThinkgear.DataType.TG_DATA_RAW);
                         DateTime _time = DateTime.Now;
                         Trial _currentTrial = new Trial(userId, trialStatus, currentTrial + trialOffset, _raw, currentPacket, _time);
+                        trialList.Add(_currentTrial);
                         Console.WriteLine("[TRIAL] Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
-                        if (toFile)
-                        {
-                            InsertTrialData(_currentTrial, savePath);
-                        }
+                        // if (toFile)
+                        // {
+                        //     InsertTrialData(_currentTrial, savePath);
+                        // }
+                        //! Update trackers
                         packetsRead++;
                         currentPacket++;
                     }
@@ -174,6 +181,14 @@ namespace thinkgear_testapp_csharp_64
             using(var tw = new StreamWriter(filePath, true))
             {
                 tw.WriteLine(trial);
+            }
+        }
+        public static void InsertTrialData(List<Trial> trialList, string filePath)
+        {
+            using(var tw = new StreamWriter(filePath, true))
+            {
+                foreach (Trial _t in trialList)
+                    tw.WriteLine(_t);
             }
         }
 

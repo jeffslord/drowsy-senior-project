@@ -9,6 +9,7 @@ import math
 data_dir = "output_fft.csv"
 
 graphing = False
+userId = "675"
 
 
 def extract_data(data_dir):
@@ -16,18 +17,22 @@ def extract_data(data_dir):
 
     #! abs(complex) might work
     df = pd.read_csv(data_dir, na_values=0.0)
-    df = df.fillna(0)
-    # print(df)
+    df = df.fillna(0.0)
     _data = df.as_matrix()
+    print(_data[0])
 
     _data_filtered = []
 
-    _data_filtered = _data
+    # _data_filtered = _data
 
-    # for x in _data:
-    #     if(str(x[0]) == userId):
-    #         _data_filtered.append(x)
+    unique = []
+    for x in _data:
+        if(str(x[0]) == userId):
+            _data_filtered.append(x)
+        if(x[0] not in unique):
+            unique.append(x[0])
 
+    print(unique)
     x = []
     y = []
     x2 = []
@@ -51,21 +56,15 @@ def extract_data(data_dir):
         x2.append(row2)
         x3.append(row3)
 
-    for i in range(len(x2)):
-        if(x2[i] == '0j'):
-            print("WHATTTTTTTTTT")
-            x2[i] = 0.0
-
     x2 = np.array(x2)
-    x2 = x2[:, :51]
+    print(x2.shape)
+    # x2 = x2[:, :51]
     x3 = np.array(x3)
     x3 = x3[:, :51]
     y = np.array(y)
-    print(x2[1])
-    print(y[1])
 
     # _data_filtered = np.array(x, dtype=np.complex_)
-    return x3, y
+    return x2, y
 
 
 def train_test_split(data, percent=0.8):
@@ -80,19 +79,16 @@ def train_test_split(data, percent=0.8):
 
 # For 2-D
 x, y = extract_data(data_dir)
-# x = data[:, 1:]
-# y = data[:, 0]
+y = y.astype(dtype=np.int)
+print(x[0])
+print(y[0])
 train_indices, test_indices = train_test_split(x)
 x_train = x[train_indices]
 y_train = y[train_indices]
 x_test = x[test_indices]
 y_test = y[test_indices]
-# print(x_test.shape)
-# print(x_test)
-# print(y_test)
-# iris = datasets.load_iris()
-# ix = iris.data[:, :2]
-# iy = iris.target
+print(x_train.shape)
+print(y_train.shape)
 
 # adjust these parameters to see what is best
 # c : how much to avoid misclassifying.
@@ -102,17 +98,17 @@ y_test = y[test_indices]
 #           low - 'far'
 #           high - 'close'
 # SVM
-c = 100
-gamma = 0.0001
+c = 0.1
+# gamma = 0.001
 svc = svm.SVC(kernel='rbf',
               C=c,
-              gamma=gamma,
+              gamma='auto',
               decision_function_shape='ovr',
-              degree=51,
+              degree=3,
               coef0=0.0,
-              probability=False,
+              probability=True,
               shrinking=True,
-              verbose=False)
+              verbose=True)
 svc = svc.fit(x_train, y_train)
 # END SVM
 

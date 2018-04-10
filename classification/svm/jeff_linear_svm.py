@@ -7,17 +7,20 @@ ops.reset_default_graph()  # Double check this
 
 
 data_dir = "../data/sample2.csv"
+data_dir = "output_fft.csv"
 
 # Extract Function from file
 # data_dir includes complete directory including extension
+
+
 def extract_data(data_dir):
-  _data = np.genfromtxt(data_dir, delimiter=',', skip_header=1, dtype=float)
-  _labels = _data[:, 0]
-  _features = _data[:, 1:]
-  #print(_labels)
-  #print(_features)
-  # Returns a matrix of labels, and a matrix of features
-  return _labels, _features
+    _data = np.genfromtxt(data_dir, delimiter=',', skip_header=1, dtype=float)
+    _labels = _data[:, 0]
+    _features = _data[:, 1:]
+    # print(_labels)
+    # print(_features)
+    # Returns a matrix of labels, and a matrix of features
+    return _labels, _features
 
 
 # Start the graph
@@ -27,7 +30,8 @@ sess = tf.Session()
 # Data should be in the form : First row = header (will be excluded),
 # leftmost column is label (0 or 1), rest is features
 labels, features = extract_data(data_dir)
-labels = np.array([1 if x == 1 else -1 for x in labels]) # Get array of 1 or -1, instead of 0 and 1.
+# Get array of 1 or -1, instead of 0 and 1.
+labels = np.array([1 if x == 1 else -1 for x in labels])
 # Train size = number of entries(trials), num_features = number of features(number of frequencies,
 # or whatever else used)
 num_tuples, num_features = features.shape
@@ -67,7 +71,8 @@ l2_norm = tf.reduce_sum(tf.square(W))
 # alpha is the soft-margin term. Increase for more erroroneous classification points. =0 for hard-margin.
 alpha = tf.constant([0.01])
 # Margin term in loss
-classification_term = tf.reduce_mean(tf.maximum(0., tf.subtract(1., tf.multiply(model_output, y))))
+classification_term = tf.reduce_mean(tf.maximum(
+    0., tf.subtract(1., tf.multiply(model_output, y))))
 # Put terms together
 loss = tf.add(classification_term, tf.multiply(alpha, l2_norm))
 
@@ -90,29 +95,31 @@ train_accuracy = []
 test_accuracy = []
 num_steps = 500
 for i in range(num_steps):
-  rand_index = np.random.choice(len(training_features), size=batch_size)
-  rand_features = training_features[rand_index]
-  rand_labels = np.transpose([training_labels[rand_index]])
-  sess.run(train_step, feed_dict={x: rand_features, y: rand_labels})
+    rand_index = np.random.choice(len(training_features), size=batch_size)
+    rand_features = training_features[rand_index]
+    rand_labels = np.transpose([training_labels[rand_index]])
+    sess.run(train_step, feed_dict={x: rand_features, y: rand_labels})
 
-  temp_loss = sess.run(loss, feed_dict={x: rand_features, y: rand_labels})
-  loss_vec.append(temp_loss)
+    temp_loss = sess.run(loss, feed_dict={x: rand_features, y: rand_labels})
+    loss_vec.append(temp_loss)
 
-  train_acc_temp = sess.run(accuracy, feed_dict={x: training_features, y: np.transpose([training_labels])})
-  train_accuracy.append(train_acc_temp)
+    train_acc_temp = sess.run(
+        accuracy, feed_dict={x: training_features, y: np.transpose([training_labels])})
+    train_accuracy.append(train_acc_temp)
 
-  test_acc_temp = sess.run(accuracy, feed_dict={x: testing_features, y: np.transpose([testing_labels])})
-  test_accuracy.append(test_acc_temp)
+    test_acc_temp = sess.run(accuracy, feed_dict={
+                             x: testing_features, y: np.transpose([testing_labels])})
+    test_accuracy.append(test_acc_temp)
 
-  if((i + 1) % 100 == 0):
-    print("Step #{} : W = {}, b = {}".format(
-      str(i+1),
-      str(sess.run(W)),
-      str(sess.run(b))
-    ))
-    print("Loss = " + str(temp_loss))
-    print("Train Accuracy = " + str(train_accuracy[i]))
-    print("Test Accuracy = " + str(test_accuracy[i]))
+    if((i + 1) % 100 == 0):
+        print("Step #{} : W = {}, b = {}".format(
+            str(i+1),
+            str(sess.run(W)),
+            str(sess.run(b))
+        ))
+        print("Loss = " + str(temp_loss))
+        print("Train Accuracy = " + str(train_accuracy[i]))
+        print("Test Accuracy = " + str(test_accuracy[i]))
 print()
 
 # Save the model (Will need to read up on how to save/export and import models into the appropriate formats)
@@ -129,7 +136,6 @@ print("Prediction: ")
 print(predictions)
 
 
-
 # Extract coefficients, can visualize for 2 dimensions(2 features) but for more you can't plot a line
 [[a1], [a2]] = sess.run(W)
 [[b]] = sess.run(b)
@@ -139,10 +145,10 @@ y_intercept = b/a1
 # Extract x1 and x2 vals
 feature_vals1 = [d[1] for d in features]
 
-#Get best fit line
+# Get best fit line
 best_fit = []
 for i in feature_vals1:
-  best_fit.append(slope*i+y_intercept)
+    best_fit.append(slope*i+y_intercept)
 
 true_x = [d[1] for i, d in enumerate(features) if labels[i] == 1]
 true_y = [d[0] for i, d in enumerate(features) if labels[i] == 1]
@@ -161,7 +167,7 @@ plt.legend(loc='lower right')
 plt.title('X vs Y')
 plt.xlabel('X')
 plt.ylabel('Y')
-#plt.show()
+# plt.show()
 
 # Plot train/test accuracies
 p2 = plt.figure(2)
@@ -171,7 +177,7 @@ plt.title('Train and Test Set Accuracies')
 plt.xlabel('Generation')
 plt.ylabel('Accuracy')
 plt.legend(loc='lower right')
-#plt.show()
+# plt.show()
 
 # Plot loss over time
 p3 = plt.figure(3)
@@ -179,7 +185,7 @@ plt.plot(loss_vec, 'k-')
 plt.title('Loss per Generation')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
-#plt.show()
+# plt.show()
 
 p1.show()
 p2.show()

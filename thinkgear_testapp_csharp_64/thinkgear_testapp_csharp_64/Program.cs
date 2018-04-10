@@ -25,6 +25,7 @@ namespace thinkgear_testapp_csharp_64
                 string idPath = Path.Combine("..", "..", "data", "ids.csv");
                 // string idPath = "data/ids.csv";
                 string backupPath = "data";
+                StreamWriter writer = new StreamWriter(savePath, true);
 
                 #region INPUT
                 bool _idFound = false;
@@ -54,12 +55,12 @@ namespace thinkgear_testapp_csharp_64
                     userStatus = int.Parse(Console.ReadLine());
                 }
                 #endregion
-
-                CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile);
+                CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile, writer);
+                writer.Close();
             }
         }
 
-        public static void CollectData(string userId, int numTrials, int trialStatus, string savePath, int sampleRate, bool toFile)
+        public static void CollectData(string userId, int numTrials, int trialStatus, string savePath, int sampleRate, bool toFile, StreamWriter writer)
         {
             #region INITIALIZE
 
@@ -152,10 +153,10 @@ namespace thinkgear_testapp_csharp_64
                         Trial _currentTrial = new Trial(userId, trialStatus, currentTrial + trialOffset, _raw, currentPacket, _time);
                         trialList.Add(_currentTrial);
                         Console.WriteLine("[TRIAL] Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
-                        // if (toFile)
-                        // {
-                        //     InsertTrialData(_currentTrial, savePath);
-                        // }
+                        if (toFile)
+                        {
+                            writer.WriteLine(_currentTrial);
+                        }
                         //! Update trackers
                         packetsRead++;
                         currentPacket++;
@@ -176,13 +177,14 @@ namespace thinkgear_testapp_csharp_64
             #endregion
         }
 
-        public static void InsertTrialData(Trial trial, string filePath)
-        {
-            using(var tw = new StreamWriter(filePath, true))
-            {
-                tw.WriteLine(trial);
-            }
-        }
+        // public static void InsertTrialData(Trial trial, string filePath, StreamWriter writer)
+        // {
+        //     writer.WriteLine(trial)
+        //     using(var tw = new StreamWriter(filePath, true))
+        //     {
+        //         tw.WriteLine(trial);
+        //     }
+        // }
         public static void InsertTrialData(List<Trial> trialList, string filePath)
         {
             using(var tw = new StreamWriter(filePath, true))

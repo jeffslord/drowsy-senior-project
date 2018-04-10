@@ -73,8 +73,8 @@ def process_fft_data(x_data):
     return np.array(x_data_rt), np.array(x_data_real_imag)
 
 
-def serving_input_receiver_fn():
-    serialized_tf_example = tf.placeholder()
+# def serving_input_receiver_fn():
+#     serialized_tf_example = tf.placeholder()
 
 
 def process():

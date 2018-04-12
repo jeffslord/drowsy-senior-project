@@ -45,9 +45,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oY-rI-FqX">
                                 <rect key="frame" x="145" y="448" width="30" height="30"/>
-                                <state key="normal" title="Test">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Test"/>
                                 <connections>
                                     <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgJ-tI-p9q"/>
                                 </connections>
@@ -126,7 +124,8 @@
                                 <rect key="frame" x="16" y="97" width="288" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Training Instructions:
-Properly don headset and click "Begin Training". When you hear a beep close your eyes. Alternate closing and opening of eyes with subsequent beeps. Click "End Training" when prompted to do so.</string>
+1. Properly wear headset and click "Begin Training". 
+2. Follow the audio instructions that will play.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -159,13 +158,19 @@ Properly don headset and click "Begin Training". When you hear a beep close your
                                 <rect key="frame" x="30" y="88" width="260" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Drowsiness Testing Instructions:
-1. Ensure you have an ID and have trained a profile.
-2. Properly don Mindwave headset and click "Begin Testing". 
-Note: Data will not be saved! </string>
+1. Ensure you have trained a profile and entered your ID on the home page.
+2. Properly equip Mindwave headset and click "Begin Testing".
+3. Click "End Testing" when finished.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-Ct-jgp">
+                                <rect key="frame" x="97" y="405" width="126" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="End Testing"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oBr-C7-lCC"/>
@@ -280,10 +285,10 @@ Note: Data will not be saved! </string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LP-xM-YLj">
                                 <rect key="frame" x="30" y="88" width="260" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Drowsiness Tracking Instructions:
-1. Ensure you have an ID and have trained a profile.
-2. Properly equip Mindwave headset and click "Begin Tracking". 
-3. Click "End Tracking" when Finished.</string>
+                                <string key="text">Drowsiness Testing Instructions:
+1. Ensure you have trained a profile and entered your ID on the home page.
+2. Properly equip Mindwave headset and click "Begin Testing".
+3. Click "End Tracking" when finished.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

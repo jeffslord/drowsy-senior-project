@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let tvc = storyboard?.instantiateViewController(withIdentifier: "Testing") as? TestingViewController {
             
             //sends the data from the text field to the ProfileTrainingViewController
-            tvc.trainid = id.text
+            tvc.testid = id.text
             
             // 3: now pushes our current ViewController onto the navigation controller
             navigationController?.pushViewController(tvc, animated: true)
@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let rvc = storyboard?.instantiateViewController(withIdentifier: "Tracking") as? RunViewController {
             
             //sends the data from the text field to the ProfileTrainingViewController
-            rvc.trainid = id.text
+            rvc.runid = id.text
             
             // 3: now pushes our current ViewController onto the navigation controller
             navigationController?.pushViewController(rvc, animated: true)

@@ -21,7 +21,7 @@ from data_process import data_processing as dp
 
 USE_FFT = True
 NORMALIZE = True
-USER_ID = ""
+USER_ID = "517"
 NUM_CLASSES = 2
 DATA_DIR = os.path.join(file_path, "data", "output_organized.csv")
 
@@ -39,7 +39,6 @@ def process():
         x_data = fftpack.fft(x_data)
         x_data_rt, x_data_real_imag = dp.process_fft_data(x_data)
         x_data = x_data_rt
-    # x_data, y_data = dp.separate_data(data)
     y_data = y_data.astype(dtype=np.int)
     print("[INFO] Train test split... ")
     x_train, x_test, y_train, y_test = train_test_split(

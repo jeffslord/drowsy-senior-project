@@ -1,6 +1,6 @@
 from app import app
 from flask import request
-from classification import jeff_nonlinear_svm as svm
+# from classification import jeff_nonlinear_svm as svm
 import numpy as np
 import json
 #import csv
@@ -23,11 +23,11 @@ def index():
         for x in data:
             np.append(new, x)
         print(data)
-        svm.process(data)
+        # svm.process(data)
         # data = svm.extract_data(data)
         return data
     elif(request.method == 'GET'):
-        return
+        return "Hello World!"
     return "Hello World!"
 
 
@@ -77,7 +77,7 @@ def train():
         npdata = np.genfromtxt('./saved_file.csv', delimiter=',',
                                skip_header=1, dtype=float)
         print(npdata)
-        svm.process('./saved_file.csv')
+        # svm.process('./saved_file.csv')
 
         return data
     elif(request.method == 'GET'):

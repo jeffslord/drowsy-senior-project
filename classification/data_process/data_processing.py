@@ -3,10 +3,12 @@ import pandas as pd
 import math
 
 
-def normalize(arr):
+def normalize(arr, min_val=None, max_val=None):
     print("[INFO] Normalizing array...")
-    min_val = np.amin(arr)
-    max_val = np.amax(arr)
+    if(min_val == None):
+        min_val = np.amin(arr)
+    if(max_val == None):
+        max_val = np.amax(arr)
     sub = np.subtract(arr, min_val)
     div = np.divide(sub, max_val)
     return div, min_val, max_val

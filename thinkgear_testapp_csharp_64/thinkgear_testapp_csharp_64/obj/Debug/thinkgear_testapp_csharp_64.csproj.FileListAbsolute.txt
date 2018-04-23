@@ -32,3 +32,10 @@ C:\Users\i849438\Development\git\drowsy-senior-project\thinkgear_testapp_csharp_
 C:\Users\i849438\Development\git\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe.config
 C:\Users\i849438\Development\git\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe
 C:\Users\i849438\Development\git\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.pdb
+C:\Users\Brandon\Documents\GitHub\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe.config
+C:\Users\Brandon\Documents\GitHub\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.exe
+C:\Users\Brandon\Documents\GitHub\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\bin\Debug\thinkgear_testapp_csharp_64.pdb
+C:\Users\Brandon\Documents\GitHub\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.csprojResolveAssemblyReference.cache
+C:\Users\Brandon\Documents\GitHub\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.csproj.CoreCompileInputs.cache
+C:\Users\Brandon\Documents\GitHub\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.exe
+C:\Users\Brandon\Documents\GitHub\drowsy-senior-project\thinkgear_testapp_csharp_64\thinkgear_testapp_csharp_64\obj\Debug\thinkgear_testapp_csharp_64.pdb

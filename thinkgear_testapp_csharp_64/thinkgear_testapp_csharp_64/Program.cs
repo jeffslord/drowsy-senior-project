@@ -54,8 +54,7 @@ namespace thinkgear_testapp_csharp_64
                     userStatus = int.Parse(Console.ReadLine());
                 }
                 #endregion
-                while(true)
-                    CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile);
+                CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile);
             }
         }
 
@@ -167,6 +166,7 @@ namespace thinkgear_testapp_csharp_64
             #endregion
 
             #region DISCONNECT
+            Console.WriteLine("[INFO] Disconnecting...");
             NativeThinkgear.TG_Disconnect(connectionID); // disconnect test
             /* Clean up */
             NativeThinkgear.TG_FreeConnection(connectionID);

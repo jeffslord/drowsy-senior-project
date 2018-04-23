@@ -25,7 +25,7 @@ namespace thinkgear_testapp_csharp_64
                 string idPath = Path.Combine("..", "..", "data", "ids.csv");
                 // string idPath = "data/ids.csv";
                 string backupPath = "data";
-                StreamWriter writer = new StreamWriter(savePath, true);
+                StreamWriter rawWriter = new StreamWriter(savePath, true);
 
                 #region INPUT
                 bool _idFound = false;
@@ -55,12 +55,12 @@ namespace thinkgear_testapp_csharp_64
                     userStatus = int.Parse(Console.ReadLine());
                 }
                 #endregion
-                CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile, writer);
-                writer.Close();
+                CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile, rawWriter);
+                rawWriter.Close();
             }
         }
 
-        public static void CollectData(string userId, int numTrials, int trialStatus, string savePath, int sampleRate, bool toFile, StreamWriter writer)
+        public static void CollectData(string userId, int numTrials, int trialStatus, string savePath, int sampleRate, bool toFile, StreamWriter rawWriter)
         {
             #region INITIALIZE
 
@@ -144,7 +144,7 @@ namespace thinkgear_testapp_csharp_64
                             previousTime = DateTime.Now;
                             seconds = (DateTime.Now - previousTime).TotalSeconds;
                             if (toFile && trialList.Count > 0)
-                                InsertTrialData(trialList, savePath);
+                                InsertTrialData(trialList, rawWriter);
                             trialList.Clear();
                         }
                         //! Set up data for Trial
@@ -153,9 +153,9 @@ namespace thinkgear_testapp_csharp_64
                         Trial _currentTrial = new Trial(userId, trialStatus, currentTrial + trialOffset, _raw, currentPacket, _time);
                         trialList.Add(_currentTrial);
                         Console.WriteLine("[TRIAL] Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
-                        if (toFile)
+                        if (toFile && (currentPacket % sampleRate == 0 || currentPacket % sampleRate == 511))
                         {
-                            writer.WriteLine(_currentTrial);
+                            rawWriter.WriteLine(_currentTrial);
                         }
                         //! Update trackers
                         packetsRead++;
@@ -185,13 +185,13 @@ namespace thinkgear_testapp_csharp_64
         //         tw.WriteLine(trial);
         //     }
         // }
-        public static void InsertTrialData(List<Trial> trialList, string filePath)
+        public static void InsertTrialData(List<Trial> trialList, StreamWriter rawWriter)
         {
-            using(var tw = new StreamWriter(filePath, true))
-            {
-                foreach (Trial _t in trialList)
-                    tw.WriteLine(_t);
-            }
+            // using(var tw = new StreamWriter(filePath, true))
+            // {
+            foreach (Trial _t in trialList)
+                rawWriter.WriteLine(_t);
+            // }
         }
 
         public static bool ValidateId(string filePath, string id)

@@ -54,7 +54,8 @@ namespace thinkgear_testapp_csharp_64
                     userStatus = int.Parse(Console.ReadLine());
                 }
                 #endregion
-                CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile);
+                while(true)
+                    CollectData(userId, maxTrials, userStatus, savePath, sampleRate, toFile);
             }
         }
 
@@ -171,6 +172,7 @@ namespace thinkgear_testapp_csharp_64
             NativeThinkgear.TG_FreeConnection(connectionID);
             /* End program */
             Console.ReadLine();
+            rawWriter.Close();
             #endregion
         }
 

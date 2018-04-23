@@ -64,6 +64,7 @@ namespace thinkgear_testapp_csharp_64
 
             Console.WriteLine("[INFO] Finding trial offset...");
             int trialOffset = GetTrialOffset(savePath, userId, trialStatus);
+            Console.WriteLine("[INFO] Trial offset = " + trialOffset.ToString());
             StreamWriter rawWriter = new StreamWriter(savePath, true);
             DateTime previousTime;
             double seconds = 0.0f;
@@ -151,11 +152,8 @@ namespace thinkgear_testapp_csharp_64
                         DateTime _time = DateTime.Now;
                         Trial _currentTrial = new Trial(userId, trialStatus, currentTrial + trialOffset, _raw, currentPacket, _time);
                         trialList.Add(_currentTrial);
-                        Console.WriteLine("[TRIAL] Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
-                        // if (toFile && (currentPacket % sampleRate == 0 || currentPacket % sampleRate == 511))
-                        // {
-                        //     rawWriter.WriteLine(_currentTrial);
-                        // }
+                        if (toFile && (currentPacket % sampleRate == 0 || currentPacket % sampleRate == 511))
+                            Console.WriteLine("[TRIAL] Trial=" + currentTrial + " Packet=" + currentPacket + " UserID=" + userId + " Status=" + trialStatus + " Total_Trial=" + (currentTrial + trialOffset));
                         //! Update trackers
                         packetsRead++;
                         currentPacket++;
